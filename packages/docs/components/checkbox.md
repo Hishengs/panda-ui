@@ -3,10 +3,10 @@ title: Checkbox 复选框
 lang: zh-CN
 ---
 
-<script setup>
+<script lang="ts" setup>
 import { ref, reactive } from 'vue';
-import Checkbox from '../../panda-ui/src/components/checkbox'
-import { Row, Col } from '../../panda-ui/src/components/grid'
+import Checkbox from '../../panda-ui/src/components/checkbox';
+import { Row, Col } from '../../panda-ui/src/components/grid';
 
 defineOptions({
   components: {
@@ -68,21 +68,6 @@ const toggleTFVal = () => {
     <panda-checkbox v-model="radioVal.value1" indeterminate></panda-checkbox>
   </panda-col>
 </panda-row>
-
-<script>
-export default {
-  data () {
-    return {
-      radioVal: {
-        value1: false,
-        value2: true,
-        value3: false,
-        value4: true,
-      }
-    }
-  }
-}
-</script>
 
 <!-- ## 真假值测试
 
@@ -200,25 +185,23 @@ export default {
 > 一般用于多选组中标识处于 **未选 => 全选** 的中间状态
 
 <panda-checkbox
-v-model="checkAll"
-:indeterminate="indeterminate"
-@change="handleCheckAllChange"
-
-> 全选
-> </panda-checkbox>
-> <panda-checkbox-group
-> v-model="indeterminateChecked"
-> style="margin-top: 20px;"
-> @change="handleCheckedChange"
+  v-model="checkAll"
+  :indeterminate="indeterminate"
+  @change="handleCheckAllChange"
 >
-> <panda-checkbox
-
+  全选
+</panda-checkbox>
+<panda-checkbox-group
+  v-model="indeterminateChecked"
+  style="margin-top: 20px;"
+  @change="handleCheckedChange"
+>
+  <panda-checkbox
     :group-value="item"
     v-for="item in indeterminateOptions"
     :key="item"
-
-> Option {{ item }}</panda-checkbox>
-> </panda-checkbox-group>
+  >Option {{ item }}</panda-checkbox>
+</panda-checkbox-group>
 
 ## 自由布局
 

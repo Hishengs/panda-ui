@@ -5,13 +5,16 @@ import { isServer } from '../../utils';
 
 const ICON_URL = 'https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js';
 
+let script: HTMLScriptElement;
+
 function loadIcons() {
-  const s = document.createElement('script');
-  s.src = ICON_URL;
-  s.onload = function () {
+  if (script) return;
+  script = document.createElement('script');
+  script.src = ICON_URL;
+  script.onload = function () {
     window.feather.replace();
   };
-  document.head.append(s);
+  document.head.append(script);
 }
 
 if (!isServer) loadIcons();

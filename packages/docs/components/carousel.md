@@ -3,7 +3,7 @@ title: Carousel 轮播（走马灯）
 lang: zh-CN
 ---
 
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue'
 import { Carousel, CarouselItem } from '../../panda-ui/src/components/carousel'
 import { Row, Col } from '../../panda-ui/src/components/grid'
@@ -43,14 +43,11 @@ const onChange = (val) => {
 ## 默认
 
 <panda-carousel @change="onChange">
-<panda-carousel-item
-v-for="(item, index) in 8"
-:key="index"
-
->
-
+  <panda-carousel-item
+    v-for="(item, index) in 8"
+    :key="index"
+  >
     <div class="panda-carousel-demo-item">{{ index }}</div>
-
   </panda-carousel-item>
 </panda-carousel>
 

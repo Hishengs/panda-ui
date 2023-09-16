@@ -47,7 +47,7 @@ const copyIcon = (name) => {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     &:hover {
       cursor: pointer;
-      opcity: 0.8;
+      opacity: 0.8;
       /* background-color: #f5f5f5; */
     }
     label {

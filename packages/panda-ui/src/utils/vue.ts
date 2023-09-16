@@ -9,7 +9,7 @@ export const vueExtend: any = function (options: any[]) {
   };
 };
 // Vue.prototype.$isServer
-export const isServer = typeof window === undefined;
+export const isServer = typeof window === 'undefined';
 // Vue.nextTick
 export const nextTick = (...args: any[]) => _nextTick(...args);
 // Vue.prototype

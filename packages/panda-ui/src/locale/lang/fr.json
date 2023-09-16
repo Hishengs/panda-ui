@@ -1,0 +1,63 @@
+{
+  "datePicker": {
+    "weeks": [
+      "dimanche",
+      "lundi",
+      "mardi",
+      "mercredi",
+      "jeudi",
+      "vendredi",
+      "samedi"
+    ],
+    "weeksShort": ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+    "weeksMin": ["d", "l", "ma", "me", "j", "v", "s"],
+    "months": [
+      "janvier",
+      "février",
+      "mars",
+      "avril",
+      "mai",
+      "juin",
+      "juillet",
+      "août",
+      "septembre",
+      "octobre",
+      "novembre",
+      "décembre"
+    ],
+    "monthsShort": [
+      "janv.",
+      "févr.",
+      "mars",
+      "avril",
+      "mai",
+      "juin",
+      "juil.",
+      "août",
+      "sept.",
+      "oct.",
+      "nov.",
+      "déc."
+    ],
+    "today": "Aujourd'hui",
+    "format": "dd/mm/yyyy",
+    "weekStart": 1
+  },
+  "messagebox": {
+    "title": "Message",
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "error": "Erreur"
+  },
+  "infiniteScroll": {
+    "noMore": "C'est fini !",
+    "exploreMore": "Découvrir plus"
+  },
+  "select": {
+    "viewMore": "Tout afficher",
+    "viewLess": "Voir moins",
+    "noResult": "Aucun résultat",
+    "save": "Save",
+    "search": "Chercher"
+  }
+}

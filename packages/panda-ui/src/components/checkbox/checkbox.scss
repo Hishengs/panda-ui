@@ -1,0 +1,180 @@
+@use 'sass:math';
+@import '../../style/import.scss';
+
+$checkbox-prefix: 'panda-checkbox';
+
+$checkbox-rect-size: 20px;
+$checkbox-rect-size__small: 16px;
+$checkbox-icon-size: 14px;
+$checkbox-icon-size__small: 14px;
+
+.#{$checkbox-prefix} {
+  display: inline-flex;
+  align-items: flex-start;
+  margin: 4px 0;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  @include font-body-s-regular();
+  color: $color-text-primary;
+  &-base {
+    flex-shrink: 0;
+    position: relative;
+    width: $checkbox-rect-size;
+    height: $checkbox-rect-size;
+    transition: all $motion-duration-m $motion-timing-ease;
+    border-radius: $radius-s;
+    border: 1px solid $color-icon-light;
+    background-color: $color-bg-widget-normal;
+    > input {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+    svg,
+    .panda-icon {
+      position: absolute;
+      top: math.div(($checkbox-rect-size - $checkbox-icon-size), 2) - 1;
+      left: math.div(($checkbox-rect-size - $checkbox-icon-size), 2) - 1;
+      color: inherit;
+      width: $checkbox-icon-size;
+      height: $checkbox-icon-size;
+      opacity: 0;
+      transition: opacity $motion-duration-l $motion-timing-ease;
+    }
+  }
+  &-label {
+    color: inherit;
+    font-size: inherit;
+    padding-left: 12px;
+  }
+  @media (any-hover: hover) {
+    &:hover &-base {
+      border-color: $color-brand-primary;
+    }
+  }
+}
+
+// size small
+.#{$checkbox-prefix}-small {
+  font-size: 14px;
+  line-height: 1.43;
+  .#{$checkbox-prefix}-base {
+    margin-top: 2px;
+    width: $checkbox-rect-size__small;
+    height: $checkbox-rect-size__small;
+    svg,
+    .panda-icon {
+      top: math.div(
+          ($checkbox-rect-size__small - $checkbox-icon-size__small),
+          2
+        ) - 1;
+      left: math.div(
+          ($checkbox-rect-size__small - $checkbox-icon-size__small),
+          2
+        ) - 1;
+      width: $checkbox-icon-size__small;
+      height: $checkbox-icon-size__small;
+    }
+  }
+  .#{$checkbox-prefix}-label {
+    padding-left: 8px;
+  }
+}
+
+// group
+.#{$checkbox-prefix}-group {
+  .#{$checkbox-prefix} {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .#{$checkbox-prefix}:not(:last-child) {
+    margin-right: 48px;
+  }
+  &-small {
+    .#{$checkbox-prefix}:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+}
+
+// checked
+.#{$checkbox-prefix}-checked {
+  .#{$checkbox-prefix}-base {
+    border-color: $color-brand-primary;
+    background-color: $color-brand-primary;
+    svg,
+    .panda-icon {
+      color: $color-icon-normal-onDark;
+      opacity: 1;
+    }
+  }
+}
+
+// indeterminate
+.#{$checkbox-prefix}-indeterminate {
+  .#{$checkbox-prefix}-base {
+    border-color: $color-brand-primary;
+    background-color: $color-brand-primary;
+    svg,
+    .panda-icon {
+      color: $color-icon-normal-onDark;
+      opacity: 1;
+    }
+  }
+}
+
+// put disabled at last
+.#{$checkbox-prefix}-disabled {
+  cursor: not-allowed;
+  color: $color-text-disabled;
+  .#{$checkbox-prefix}-base {
+    border-color: $color-text-disabled;
+    background-color: $color-neutral-200;
+    > input {
+      cursor: not-allowed;
+    }
+    svg,
+    .panda-icon {
+      color: $color-text-disabled;
+    }
+  }
+  &:hover .#{$checkbox-prefix}-base {
+    border-color: $color-text-disabled;
+  }
+}
+
+.panda-checkbox-rtl {
+  direction: rtl;
+  .panda-checkbox-label {
+    padding-left: unset;
+    padding-right: 12px;
+  }
+}
+
+.panda-checkbox-rtl.panda-checkbox-small .panda-checkbox-label {
+  padding-left: unset;
+  padding-right: 8px;
+}
+
+.panda-checkbox-group-rtl {
+  direction: rtl;
+  .panda-checkbox:not(:last-child) {
+    margin-left: 48px;
+    margin-right: unset;
+  }
+  .panda-checkbox-group-small {
+    .panda-checkbox:not(:last-child) {
+      margin-left: 32px;
+      margin-right: unset;
+    }
+  }
+}

@@ -1,0 +1,337 @@
+@import '../../style/import.scss';
+
+$prefix: 'panda-date-picker';
+$datepicker-date-size: 36px;
+$datepicker-padding-x: 16px;
+$datepicker-padding-y: 20px;
+
+.#{$prefix} {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-bg-widget-normal;
+  padding-bottom: $datepicker-padding-y;
+  border-radius: $radius-l;
+  .#{$prefix}-weeks {
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 $datepicker-padding-x;
+    .#{$prefix}-week {
+      width: 44px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 44px;
+      font-size: 12px;
+      color: $color-text-disabled;
+    }
+  }
+  .#{$prefix}-panels {
+    display: flex;
+    flex-direction: row;
+    .#{$prefix}-panel {
+      flex: 1;
+      max-width: 100%;
+      .#{$prefix}-panel-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: content-box;
+        height: 20px;
+        padding: $datepicker-padding-y $datepicker-padding-x;
+        .#{$prefix}-prev-btn,
+        .#{$prefix}-next-btn {
+          width: 44px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          user-select: none;
+          color: $color-text-primary;
+          svg {
+            font-size: 16px;
+          }
+          &-disabled {
+            visibility: hidden;
+          }
+          &:hover {
+            color: $color-text-primary;
+          }
+        }
+        .#{$prefix}-panel-header-main {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          .#{$prefix}-panel-header-title {
+            font-weight: $fontWeight-bold;
+            font-size: 16px;
+            line-height: 20px;
+            color: $color-text-primary;
+            svg {
+              display: inline-block;
+              margin-left: 5px;
+              margin-bottom: 2px;
+            }
+          }
+        }
+        &-switchable .#{$prefix}-panel-header-title {
+          cursor: pointer;
+          &:hover {
+            color: $color-brand-primary;
+          }
+        }
+        &-switchable .#{$prefix}-panel-header-title.is-year {
+          cursor: default;
+          &:hover {
+            color: $color-text-primary;
+          }
+        }
+      }
+      & {
+        .#{$prefix}-view-wrapper {
+          padding: 0 $datepicker-padding-x;
+          .#{$prefix}-date-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            &:not(:last-child) {
+              margin-bottom: 2.857%;
+            }
+            .#{$prefix}-date {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              flex-direction: column;
+              flex-shrink: 0;
+              flex-grow: 0;
+              flex-basis: 14.2857%;
+              max-width: 14.2857%;
+              @include font-body-s-regular();
+              color: $color-text-primary;
+              cursor: pointer;
+              .#{$prefix}-date-main {
+                display: flex;
+                max-height: $datepicker-date-size;
+                width: 100%;
+                flex-grow: 1;
+                justify-content: center;
+              }
+              .#{$prefix}-date-inner {
+                display: flex;
+                align-items: center;
+                // FIX: safari 下居中 bug
+                // ref: https://stackoverflow.com/questions/33084810/how-is-possible-that-display-flex-and-align-items-center-do-not-work-anymo
+                -webkit-align-items: center;
+                justify-content: center;
+                height: $datepicker-date-size;
+                width: $datepicker-date-size;
+                border-radius: 50%;
+                user-select: none;
+              }
+              @media (any-hover: hover) {
+                &:hover .#{$prefix}-date-inner {
+                  background-color: $color-brand-primary-background;
+                }
+              }
+              .#{$prefix}-date-prepend,
+              .#{$prefix}-date-append {
+                display: block;
+                text-align: center;
+                width: 100%;
+                max-width: 100%;
+                color: $color-text-secondary;
+                @include font-caption-s-regular();
+                overflow: hidden;
+                text-overflow: clip;
+                white-space: nowrap;
+                padding: 1px 2px 0px 2px;
+              }
+            }
+            // empty
+            .#{$prefix}-date-empty {
+              cursor: default;
+              &, &:hover .#{$prefix}-date-inner {
+                background: transparent;
+              }
+            }
+            // in range
+            .#{$prefix}-date-in-range .#{$prefix}-date-main {
+              background: $color-brand-primary-background;
+            }
+            // hovering-end
+            .#{$prefix}-date-hovering-end .#{$prefix}-date-main {
+              background: linear-gradient(to left, rgba(255,255,255,.001), rgba(255,255,255,.001) 30%, $color-brand-primary-background);
+              .#{$prefix}-date-inner {
+                background-color: $color-orange-100;
+              }
+            }
+            // today
+            .#{$prefix}-date-today {
+              .#{$prefix}-date-inner {
+                &, &:hover {
+                  color: $color-brand-primary;
+                }
+              }
+            }
+            // selected
+            .#{$prefix}-date-selected {
+              &:hover .#{$prefix}-date-inner, .#{$prefix}-date-inner {
+                font-weight: $fontWeight-bold;
+                color: $color-text-primary-onDark;
+                background-color: $color-brand-primary;
+              }
+            }
+            // double selected
+            .#{$prefix}-date-double-selected {
+              .#{$prefix}-date-inner {
+                &, &:hover {
+                  background-clip: padding-box;
+                  border: 4px solid $color-brand-primary-background;
+                }
+              }
+            }
+            // disabled
+            .#{$prefix}-date-disabled {
+              &, &:hover .#{$prefix}-date-inner {
+                cursor: not-allowed;
+                color: $color-text-disabled;
+                background-color: $color-bg-widget-normal;
+              }
+            }
+            // sold out
+            .#{$prefix}-date-sold-out {
+              .#{$prefix}-date-inner {
+                position: relative;
+                &::after {
+                  position: absolute;
+                  left: 50%;
+                  right: 0;
+                  top: 50%;
+                  content: '';
+                  display: block;
+                  width: 24px;
+                  margin-left: -12px;
+                  border-top: 1px solid $color-text-disabled;
+                  transform: rotate(45deg);
+                }
+              }
+            }
+            // FIX: 用 rgba(255,255,255,.001) 代替 transparent，因为 transparent 在 safari 以及 iphone 手机浏览器下呈灰色
+            // is-start, in range and selected
+            .#{$prefix}-date-start.#{$prefix}-date-selected.#{$prefix}-date-in-range .#{$prefix}-date-main {
+              background: linear-gradient(to right, rgba(255,255,255,.001), rgba(255,255,255,.001) 25%, $color-brand-primary-background);
+            }
+            // is-end, in range and selected
+            .#{$prefix}-date-end.#{$prefix}-date-selected.#{$prefix}-date-in-range .#{$prefix}-date-main {
+              background: linear-gradient(to left, rgba(255,255,255,.001), rgba(255,255,255,.001) 25%, $color-brand-primary-background);
+            }
+          }
+        }
+      }
+    }
+  }
+  .#{$prefix}-tip {
+    @include font-caption-m-regular();
+    color: $color-text-placeholder;
+    padding-top: 12px;
+    padding-bottom: 0;
+    padding-left: $datepicker-padding-x + 12px;
+    padding-right: $datepicker-padding-x + 12px;
+    background-color: $color-bg-widget-normal;
+    display: flex;
+    align-items: flex-start;
+    .panda-icon {
+      font-size: 16px;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+  }
+  .#{$prefix}-month,
+  .#{$prefix}-year {
+    display: inline-block;
+    width: 33.3333%;
+    text-align: center;
+    margin: 25px 0;
+    &-inner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      // font-size: 15px;
+      @include font-body-s-regular();
+      color: $color-text-primary;
+      height: 32px;
+      width: 60px;
+      border-radius: 16px;
+      &:hover {
+        background-color: $color-brand-primary-background;
+        cursor: pointer;
+      }
+    }
+  }
+  .#{$prefix}-month-selected .#{$prefix}-month-inner,
+  .#{$prefix}-year-selected .#{$prefix}-year-inner {
+    background-color: $color-brand-primary;
+    color: $color-text-primary-onDark;
+    @include font-body-s-bold();
+  }
+  .#{$prefix}-month-disabled .#{$prefix}-month-inner,
+  .#{$prefix}-year-disabled .#{$prefix}-year-inner {
+    background-color: transparent;
+    color: $color-text-disabled;
+    &:hover {
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// vertical scroll mode
+.#{$prefix}-vertical-scroll {
+  height: 100%;
+  min-height: 461px;
+  .panda-date-picker-panels {
+    flex-direction: column;
+    max-height: 100%;
+    overflow-y: auto;
+    // FIX: 解决在 iPhone 浏览器下滚动卡顿问题
+    -webkit-overflow-scrolling: touch;
+  }
+  .#{$prefix}-vertical-panel-title {
+    padding: 24px 0 16px 28px;
+    @include font-body-m-bold();
+    color: $color-text-primary;
+  }
+}
+
+.#{$prefix}-shadow {
+  box-shadow: $shadow-hover-1;
+}
+
+.#{$prefix}-rtl {
+  .#{$prefix}-date-start.#{$prefix}-date-selected.#{$prefix}-date-in-range .#{$prefix}-date-main {
+    background: linear-gradient(to left, rgba(255,255,255,.001), rgba(255,255,255,.001) 25%, $color-brand-primary-background) !important;
+  }
+  .#{$prefix}-date-hovering-end .#{$prefix}-date-main {
+    background: linear-gradient(to right, rgba(255,255,255,.001), rgba(255,255,255,.001) 30%, $color-brand-primary-background) !important;
+  }
+  // is-end, in range and selected
+  .#{$prefix}-date-end.#{$prefix}-date-selected.#{$prefix}-date-in-range .#{$prefix}-date-main {
+    background: linear-gradient(to right, rgba(255,255,255,.001), rgba(255,255,255,.001) 25%, $color-brand-primary-background) !important;
+  }
+  .#{$prefix}-vertical-panel-title {
+    padding: 24px 28px 16px 0;
+  }
+  .#{$prefix}-tip {
+    .panda-icon {
+      margin-right: 0;
+      margin-left: 6px;
+    }
+  }
+}

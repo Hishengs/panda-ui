@@ -1,0 +1,99 @@
+@import '../../style/import.scss';
+
+$panda-counter-size: 36px;
+$panda-counter-size__small: 28px;
+$panda-counter-input-width: 36px;
+
+.panda-counter {
+  display: inline-flex;
+  align-items: center;
+  height: $panda-counter-size;
+  background-color: $color-bg-widget-normal;
+  &-decrease, &-increase {
+    font-size: 16px;
+    padding: 10px;
+    width: $panda-counter-size;
+    height: $panda-counter-size;
+    border-radius: $radius-s;
+    background-color: $color-bg-widget-darker-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    color: $color-text-primary;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $color-bg-widget-darker-3;
+      }
+    }
+    &:active {
+      background-color: $color-bg-widget-darker-3;
+    }
+    &-disabled {
+      &, &:hover, &:active {
+        cursor: default;
+        color: $color-icon-disabled;
+        background-color: $color-bg-widget-darker-2;
+      }
+    }
+  }
+  &-input {
+    padding: 0 8px;
+    height: 100%;
+    input {
+      @include font-body-m-regular();
+      color: $color-text-primary;
+      border: none;
+      outline: none;
+      text-align: center;
+      width: $panda-counter-input-width;
+      height: 100%;
+      display: inline-block;
+      caret-color: $color-brand-primary;
+      transition: width $motion-duration-s $motion-timing-ease;
+      background-color: transparent;
+      &::selection {
+        background-color: $color-brand-primary-background;
+      }
+    }
+  }
+  // small
+  &-small &-decrease, &-small &-increase {
+    padding: 6px;
+    width: $panda-counter-size__small;
+    height: $panda-counter-size__small;
+  }
+  // disabled
+  &-disabled &-input {
+    input {
+      color: $color-text-disabled;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.panda-counter-primary {
+  .panda-counter-decrease, .panda-counter-increase {
+    background-color: $color-bg-widget-normal;
+    border: 1px solid $color-brand-primary;
+    color: $color-brand-primary;
+    @media (any-hover: hover) {
+      &:hover {
+        background: rgba($color-orange-600, $opacity-pressed);
+        border: 1px solid $color-orange-600;
+      }
+    }
+    &:active {
+      background: rgba($color-orange-700, $opacity-pressed);
+      border: 1px solid $color-orange-700;
+    }
+    &-disabled {
+      &, &:hover, &:active {
+        background-color: $color-bg-widget-normal;
+        border: 1px solid $color-orange-100;
+        color: $color-orange-100;
+      }
+    }
+  }
+}

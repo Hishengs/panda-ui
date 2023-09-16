@@ -1,0 +1,8 @@
+@import './import.scss';
+
+.panda-expand-enter-active,
+.panda-expand-leave-active {
+  transition: all 0.45s $easeOutFunction;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}

@@ -1,0 +1,109 @@
+@import './normalize.scss';
+@import './vars.scss';
+@import './transitions.scss';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: normal;
+  width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #fff;
+  color: $color-text-primary;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  // color: $color-brand-primary;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+h1 {
+  @include font-heading-m();
+}
+
+h2 {
+  @include font-heading-s();
+}
+
+h3 {
+  @include font-heading-xs();
+}
+
+h4 {
+  @include font-body-l-bold();
+}
+
+h5 {
+  @include font-body-m-bold();
+}
+
+h6 {
+  @include font-body-s-bold();
+}
+
+// scrollbar
+.panda-scrollbar-x {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 4px 0 $color-neutral-600 inset;
+    visibility: hidden;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      visibility: initial;
+    }
+  }
+}
+
+.panda-scrollbar-y {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 0;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    border-right: 1px solid transparent;
+    box-shadow: 4px 0 0 $color-neutral-600 inset;
+    visibility: hidden;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      visibility: initial;
+    }
+  }
+}
+
+// 设置在 html 上用于禁止页面滚动
+.panda-lock-body-scroll {
+  body {
+    position: fixed !important;
+    height: 100% !important;
+  }
+}

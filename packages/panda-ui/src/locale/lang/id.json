@@ -1,0 +1,55 @@
+{
+  "datePicker": {
+    "weeks": ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
+    "weeksShort": ["Mgu", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
+    "weeksMin": ["Mg", "Sn", "Sl", "Ra", "Ka", "Ju", "Sa"],
+    "months": [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember"
+    ],
+    "monthsShort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "Mei",
+      "Jun",
+      "Jul",
+      "Ags",
+      "Sep",
+      "Okt",
+      "Nov",
+      "Des"
+    ],
+    "today": "Hari Ini",
+    "format": "dd/mm/yyyy",
+    "weekStart": 1
+  },
+  "messagebox": {
+    "title": "Pesan",
+    "confirm": "Ya",
+    "cancel": "Batal",
+    "error": "Masukan ilegal"
+  },
+  "infiniteScroll": {
+    "noMore": "Anda tiba di akhir halaman",
+    "exploreMore": "Eksplor lagi"
+  },
+  "select": {
+    "viewMore": "Lihat Semua",
+    "viewLess": "Sembunyikan",
+    "noResult": "Hasil tidak ditemukan",
+    "save": "Cari",
+    "search": "Search"
+  }
+}

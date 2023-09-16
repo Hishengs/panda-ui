@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Icon > proerty color 1`] = `"<span class=\\"panda-icon\\" style=\\"height: 14px;\\"><i data-feather=\\"user\\" style=\\"width: 14px; height: 14px; color: rgb(0, 0, 0);\\"><!--  --></i></span>"`;
+
+exports[`Icon > proerty size 1`] = `"<span class=\\"panda-icon\\" style=\\"height: 20px;\\"><i data-feather=\\"user\\" style=\\"width: 20px; height: 20px;\\"><!--  --></i></span>"`;
+
+exports[`Icon > proerty type 1`] = `"<span class=\\"panda-icon\\" style=\\"height: 14px;\\"><i data-feather=\\"user\\" style=\\"width: 14px; height: 14px;\\"><!--  --></i></span>"`;
+
+exports[`Icon > should be default view 1`] = `"<span class=\\"panda-icon\\" style=\\"height: 14px;\\"><i data-feather=\\"user\\" style=\\"width: 14px; height: 14px;\\"><!--  --></i></span>"`;

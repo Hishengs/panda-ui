@@ -1,0 +1,109 @@
+@import '../../style/import.scss';
+
+.panda-bottom-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: visibility $motion-duration-l $motion-timing-ease;
+  &-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-bg-overlay-black-mobile;
+    opacity: $opacity-solid;
+    transition: opacity $motion-duration-l $motion-timing-ease;
+    cursor: pointer;
+  }
+  &-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 90%;
+    overflow: hidden;
+    background-color: $color-bg-widget-normal;
+    padding: 16px 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: transform $motion-duration-l $motion-timing-ease;
+    display: flex;
+    flex-direction: column;
+    .panda-bottom-sheet-header,
+    .panda-bottom-sheet-footer {
+      flex-shrink: 0;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+    .panda-bottom-sheet-header {
+      height: 24px;
+      margin-bottom: 16px;
+      background-color: $color-bg-widget-normal;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &-left,
+      &-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
+      &-left {
+        left: 0;
+      }
+      &-right {
+        right: 0;
+      }
+      &-title {
+        max-width: 60%;
+        margin: 0 auto;
+      }
+      &-title > h1 {
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        font-size: 16px;
+        color: $color-text-primary;
+        margin: 0;
+        padding: 0;
+        font-weight: $fontWeight-bold;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      svg {
+        font-size: 24px;
+      }
+      .panda-bottom-sheet-close-btn {
+        cursor: pointer;
+      }
+    }
+    .panda-bottom-sheet-body {
+      flex: 1;
+      max-height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 16px;
+    }
+    .panda-bottom-sheet-footer {
+      margin-top: 16px;
+    }
+  }
+}
+
+.panda-bottom-sheet-hidden {
+  visibility: hidden;
+  .panda-bottom-sheet-mask {
+    opacity: $opacity-transparent;
+  }
+}
+
+.panda-bottom-sheet-swiping {
+  .panda-bottom-sheet-inner {
+    transition: none;
+  }
+}

@@ -1,0 +1,106 @@
+@import './import.scss';
+
+$transition-time: $motion-duration-l;
+$transition-fn: $motion-timing-ease;
+
+.panda-fade-transition-enter-active,
+.panda-fade-transition-leave-active {
+  transition: opacity $transition-time $transition-fn;
+}
+
+.panda-fade-transition-enter,
+.panda-fade-transition-leave-active {
+  opacity: 0 !important;
+}
+
+.panda-popover-transition-enter-active,
+.panda-popover-transition-leave-active {
+  transition-duration: 300ms;
+  transition-property: opacity, transform;
+  backface-visibility: hidden;
+}
+
+.panda-popover-transition-enter,
+.panda-popover-transition-leave-active {
+  transform: scale(0.6);
+  opacity: 0;
+}
+
+.panda-bottom-sheet-transition-enter-active,
+.panda-bottom-sheet-transition-leave-active {
+  transition: transform $transition-time $transition-fn;
+  backface-visibility: hidden;
+}
+
+.panda-bottom-sheet-transition-enter,
+.panda-bottom-sheet-transition-leave-active {
+  transform: translate3d(0, 100%, 0);
+}
+
+.panda-slide-top-transition-enter-active,
+.panda-slide-top-transition-leave-active {
+  transition:
+    transform $transition-time $transition-fn,
+    opacity $transition-time $transition-fn;
+  backface-visibility: hidden;
+}
+
+.panda-slide-top-transition-enter,
+.panda-slide-top-transition-leave-active {
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+}
+
+.panda-slide-bottom-transition-enter-active,
+.panda-slide-bottom-transition-leave-active {
+  transition:
+    transform $transition-time $transition-fn,
+    opacity $transition-time $transition-fn;
+  backface-visibility: hidden;
+}
+
+.panda-slide-bottom-transition-enter,
+.panda-slide-bottom-transition-leave-active {
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+}
+
+.panda-slide-left-transition-enter-active,
+.panda-slide-left-transition-leave-active {
+  transition:
+    transform $transition-time $transition-fn,
+    opacity $transition-time $transition-fn;
+  backface-visibility: hidden;
+}
+
+.panda-slide-left-transition-enter,
+.panda-slide-left-transition-leave-active {
+  transform: translate3d(-100%, 0, 0);
+  opacity: 0;
+}
+
+.panda-slide-right-transition-enter-active,
+.panda-slide-right-transition-leave-active {
+  transition:
+    transform $transition-time $transition-fn,
+    opacity $transition-time $transition-fn;
+  backface-visibility: hidden;
+}
+
+.panda-slide-right-transition-enter,
+.panda-slide-right-transition-leave-active {
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+}
+
+.panda-scale-transition-enter-active,
+.panda-scale-transition-leave-active {
+  transition: all $transition-time $transition-fn;
+  backface-visibility: hidden;
+}
+
+.panda-scale-transition-enter,
+.panda-scale-transition-leave-active {
+  transform: scale(0);
+  opacity: 0;
+}

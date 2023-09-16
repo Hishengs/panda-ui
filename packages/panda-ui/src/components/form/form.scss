@@ -1,0 +1,110 @@
+@import '../../style/import.scss';
+
+$form-error-color: $color-error;
+
+$form-item-label-margin: 8px;
+
+$form-item-margin__small: 16px;
+$form-item-margin: 20px;
+$form-item-margin__large: 24px;
+$inline-form-item-margin__small: 20px;
+$inline-form-item-margin: 24px;
+$inline-form-item-margin__large: 32px;
+
+.panda-form {
+  &-item {
+    display: flex;
+    flex-direction: column;
+    &-label {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: $form-item-label-margin;
+      color: $color-text-primary;
+    }
+    &-tooltip-icon {
+      margin-top: -2px;
+    }
+    &-error {
+      font-size: 12px;
+      line-height: 16px;
+      color: $form-error-color;
+      margin-top: 4px;
+    }
+    &-tip {
+      margin-top: 8px;
+      @include font-caption-m-regular();
+      color: $color-text-secondary;
+    }
+    &:not(:last-child) {
+      margin-bottom: $form-item-margin;
+    }
+    &-is-required label::before {
+      content: '*';
+      color: $form-error-color;
+      margin-right: 4px;
+    }
+    &-no-required-mark label::before {
+      display: none;
+    }
+    & .panda-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.panda-form-inline {
+  flex-direction: row;
+  .panda-form-item {
+    vertical-align: top;
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: $inline-form-item-margin;
+    }
+  }
+}
+
+.panda-form-item-has-error {
+  .panda-input:not(.panda-input-filled) .panda-input-inner,
+  .panda-select:not(.panda-select-filled) .panda-select-reference {
+    border-color: $form-error-color !important;
+  }
+}
+
+// size
+.panda-form-small {
+  .panda-form-item:not(:last-child) {
+    margin-bottom: $form-item-margin__small;
+  }
+  .panda-form-item-label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+.panda-form-inline.panda-form-small {
+  .panda-form-item:not(:last-child) {
+    margin-right: $inline-form-item-margin__small;
+  }
+}
+
+.panda-form-large {
+  .panda-form-item:not(:last-child) {
+    margin-bottom: $form-item-margin__large;
+  }
+  .panda-form-item-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.panda-form-inline.panda-form-large {
+  .panda-form-item:not(:last-child) {
+    margin-right: $inline-form-item-margin__large;
+  }
+}
+
+.panda-form-rtl.panda-form-inline {
+  .panda-form-item:not(:last-child) {
+    margin-left: $inline-form-item-margin;
+    margin-right: unset;
+  }
+}

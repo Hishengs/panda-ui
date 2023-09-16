@@ -1,0 +1,385 @@
+/*
+@desc 组件库基础样式变量定义
+*/
+@import './colors.scss';
+
+// ===== colors =====
+/* $color-brand-primary: $color-orange-500 !default;
+$color-brand-primary-background: $color-orange-50 !default;
+$color-brand-primary-light: $color-orange-50 !default; */
+$color-brand-primary: #323232 !default;
+$color-brand-primary-background: #eeeeee !default;
+$color-brand-primary-light: #eeeeee !default;
+// #color-primary-disabled: offsetColor($color-primary, -4) !default; // TODO: 废弃, $color-orange-100
+// #color-primary-hover: offsetColor($color-primary, +1) !default; // TODO: 废弃, $color-orange-600
+// #color-primary-click: offsetColor($color-primary, +2) !default; // TODO: 废弃, $color-orange-700
+
+$color-brand-secondary: $color-yellow-500 !default;
+$color-brand-secondary-light: $color-yellow-50 !default;
+
+$color-error: $color-red-500 !default;
+$color-error-background: $color-red-50 !default;
+// #color-error-disabled: offsetColor($color-error, -4) !default; // TODO: 废弃, $color-red-100
+// #color-error-hover: offsetColor($color-error, +1) !default; // TODO: 废弃, $color-red-600
+// #color-error-click: offsetColor($color-error, +2) !default; // TODO: 废弃, $color-red-700
+
+$color-caution: $color-yellow-500 !default;
+$color-caution-background: $color-yellow-50 !default;
+// #color-warning-disabled: offsetColor($color-warning, -4) !default; // TODO: 废弃, $color-yellow-100
+// #color-warning-hover: offsetColor($color-warning, +1) !default; // TODO: 废弃, $color-yellow-600
+// #color-warning-click: offsetColor($color-warning, +2) !default; // TODO: 废弃, $color-yellow-700
+
+$color-success: $color-green-500 !default;
+$color-success-background: $color-green-50 !default;
+// #color-success-disabled: offsetColor($color-success, -4) !default; // TODO: 废弃, $color-green-100
+// #color-success-hover: offsetColor($color-success, +1) !default; // TODO: 废弃, $color-green-600
+// #color-success-click: offsetColor($color-success, +2) !default; // TODO: 废弃, $color-green-700
+
+$color-info: $color-blue-500 !default;
+$color-info-background: $color-blue-50 !default;
+// #color-info-disabled: offsetColor($color-info, -4) !default; // TODO: 废弃, $color-blue-100
+// #color-info-hover: offsetColor($color-info, +1) !default; // TODO: 废弃, $color-blue-600
+// #color-info-click: offsetColor($color-info, +2) !default; // TODO: 废弃, $color-blue-700
+
+$color-common-black: $color-black !default; // RENAME: $color-black => $color-common-black
+$color-common-white: $color-white !default; // RENAME: $color-white => $color-common-white
+// 在 iOS 或者 safari 下直接使用 transparent 会有问题
+$color-transparent: rgba(255, 255, 255, 0);
+
+// ====== text color ======
+// #color-text-heading: $color-neutral-900 !default; // TODO: 废弃, $color-text-primary
+$color-text-primary: $color-neutral-900 !default;
+$color-text-secondary: $color-neutral-700 !default;
+$color-text-placeholder: $color-neutral-600 !default;
+// #color-text-caption: $color-neutral-600 !default; // TODO: 废弃, $color-text-placeholder
+$color-text-disabled: $color-neutral-500 !default;
+// #color-text-hint: $color-neutral-400 !default; // TODO: 废弃, $color-neutral-400
+$color-text-primary-onDark: $color-white !default; // RENAME: $color-text-on-dark => $color-text-primary-onDark
+$color-text-secondary-onDark: rgba($color-white, 72%);
+$color-text-placeholder-onDark: rgba($color-white, 62%);
+$color-text-disabled-onDark: rgba($color-white, 52%);
+$color-text-link: $color-blue-500 !default;
+$color-text-reverse: $color-white !default;
+
+// ====== text highlight color ======
+// #color-text-highlight-blue:	$color-blue-500 !default; // TODO: 废弃, $color-info
+// #color-text-highlight-orange:	$color-orange-500 !default; // TODO: 废弃, $color-brand-primary
+// #color-text-highlight-red:	$color-red-500 !default; // TODO: 废弃, $color-error
+// #color-text-highlight-yellow:	$color-yellow-500 !default; // TODO: 废弃, $color-brand-secondary
+// #color-text-highlight-green:	$color-green-500 !default; // TODO: 废弃, $color-success
+// TODO: localcms 暂时仍需要，先不完全注释(// #)或移除
+// $color-text-highlight-blue: $color-info;
+// $color-text-highlight-orange: $color-brand-primary;
+// $color-text-highlight-red: $color-error;
+// $color-text-highlight-yellow: $color-brand-secondary;
+// $color-text-highlight-green:	$color-success;
+
+// ====== gradient color ======
+$color-gradient-brand-1: linear-gradient(
+  135deg,
+  #ffa673 0%,
+  #f74600 100%
+) !default;
+$color-gradient-brand-2: linear-gradient(
+  0deg,
+  rgba(255, 114, 32, 0) 0%,
+  #ff7220 44.93%,
+  #ff5722 100%
+) !default;
+$color-gradient-brand-3: linear-gradient(
+  180deg,
+  #ff820f 0%,
+  #ff5722 100%
+) !default;
+
+// ====== icon color ======
+$color-icon-normal: $color-neutral-800 !default;
+$color-icon-normal-onDark: $color-white !default;
+$color-icon-disabled: $color-neutral-500 !default;
+$color-icon-disabled-onDark: rgba($color-white, 0.52);
+$color-icon-light: $color-neutral-500 !default;
+$color-icon-normal-onDark: $color-white !default;
+$color-icon-light-onDark: rgba($color-white, 0.52) !default;
+
+// ====== line color ======
+$color-divider-solid-normal: $color-neutral-200 !default; // RENAME: $color-divider-on-surface => $color-divider-solid-normal
+$color-divider-solid-darker: $color-neutral-300 !default; // RENAME: $color-divider-on-background => $color-divider-solid-darker
+$color-divider-dashed-normal: $color-neutral-300 !default; // RENAME: $color-divider-dashed => $color-divider-dashed-normal
+$color-divider-dashed-darker: $color-neutral-400 !default;
+$color-divider-solid-normal-onDark: rgba($color-white, 0.24) !default;
+$color-divider-solid-darker-onDark: rgba($color-white, 0.32) !default;
+
+// ====== background color ======
+$color-bg-widget-normal: $color-white !default; // RENAME: $color-surface => $color-bg-widget-normal
+$color-bg-widget-darker-1: $color-neutral-50 !default;
+$color-bg-widget-darker-2: $color-neutral-100 !default;
+$color-bg-widget-darker-3: $color-neutral-200 !default;
+$color-bg-page: $color-neutral-100 !default;
+// #color-background-page-light: $color-neutral-50 !default; // TODO: 废弃, $color-bg-widget-darker-1
+// #color-background-page: $color-neutral-100 !default; // TODO: 废弃, $color-bg-page
+// #color-background-widget-lighter2: $color-neutral-50 !default; // TODO: 废弃, $color-bg-widget-darker-1
+// #color-background-widget-lighter1: $color-neutral-100 !default; // TODO: 废弃, $color-bg-widget-darker-2
+// #color-background-widget-light: $color-neutral-200 !default; // TODO: 废弃, $color-bg-widget-darker-3
+// #color-background-widget-dark: $color-neutral-300 !default; // TODO: 废弃, $color-neutral-300
+// #color-background-widget-darker1: $color-neutral-400 !default; // TODO: 废弃, $color-neutral-400
+// #color-background-widget-darker2: $color-neutral-500 !default; // TODO: 废弃, $color-neutral-500
+$color-bg-1: $color-white !default;
+$color-bg-2: $color-neutral-50 !default;
+$color-bg-3: $color-neutral-100 !default;
+$color-bg-4: $color-neutral-200 !default;
+
+// ====== border color ======
+$color-border-active: $color-neutral-800 !default;
+$color-border-normal: $color-neutral-300 !default;
+$color-border-dim: $color-neutral-200 !default;
+$color-border-active-onDark: $color-white !default;
+$color-border-normal-onDark: rgba($color-white, 0.5) !default;
+$color-border-dim-onDark: rgba($color-white, 0.25) !default;
+// #color-border-widget-lighter3: $color-white !default; // TODO: 废弃, $color-border-active-onDark
+// #color-border-widget-lighter2: $color-neutral-200 !default; // TODO: 废弃, $color-border-dim
+// #color-border-widget-lighter1: $color-neutral-300 !default; // TODO: 废弃, $color-border-normal
+// #color-border-widget-light: $color-neutral-400 !default; // TODO: 废弃, $color-border-normal
+// #color-border-widget-dark: $color-neutral-500 !default; // TODO: 废弃, $color-border-active
+// #color-border-widget-darker1: $color-neutral-600 !default; // TODO: 废弃, $color-border-active
+// #color-border-widget-darker2: $color-neutral-700 !default; // TODO: 废弃, $color-border-active
+$color-border-active-reverse: $color-white !default;
+
+// ====== overlay ======
+$color-bg-overlay-white: rgba(
+  $color-white,
+  0.6
+) !default; // RENAME: $overlay-background-light => $color-bg-overlay-white
+$color-bg-overlay-black-mobile: rgba(
+  $color-black,
+  0.38
+) !default; // RENAME: $overlay-background => $color-bg-overlay-black-mobile
+$color-bg-overlay-black-desktop: rgba(
+  $color-black,
+  0.6
+) !default; // RENAME: $overlay-background-dark => $color-bg-overlay-black-desktop
+$color-bg-overlay-black-8: rgba($color-black, 0.8) !default;
+$color-overlay-default-1: rgba($color-black, 0.8) !default;
+$color-overlay-default-2: rgba($color-black, 0.6) !default;
+$color-overlay-default-3: rgba($color-black, 0.38) !default;
+$color-overlay-gradient-1: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, 0.48) 100%
+) !default;
+$color-overlay-gradient-2: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, 0.3) 100%
+) !default;
+$color-overlay-gradient-3: linear-gradient(
+  0deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, 0.3) 100%
+) !default;
+$color-overlay-gradient-4: linear-gradient(
+  270deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, 0.3) 100%
+) !default;
+$color-overlay-gradient-5: linear-gradient(
+  90deg,
+  rgba(255, 255, 255, 0) 0%,
+  $color-white 100%
+) !default;
+
+// ====== fontWeight ======
+$fontWeight-regular: 400 !default;
+$fontWeight-semibold: 500 !default;
+$fontWeight-bold: 600 !default;
+
+// ====== lineHeight ======
+$lineHeight-relaxed: 1.44;
+$lineHeight-compact: 1.18;
+
+// ====== fontSize ======
+$fontSize-caption-s: 10px;
+$fontSize-caption-m: 12px;
+$fontSize-body-s: 14px;
+$fontSize-body-m: 16px;
+$fontSize-body-l: 18px;
+$fontSize-heading-xs: 20px;
+$fontSize-heading-s: 24px;
+$fontSize-heading-m: 28px;
+$fontSize-heading-l: 32px;
+$fontSize-heading-xl: 44px;
+$fontSize-heading-xxl: 60px;
+
+// RENAME: text-display-large2 => font-heading-xxl
+@mixin font-heading-xxl() {
+  font-size: $fontSize-heading-xxl;
+  line-height: $lineHeight-compact;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-display-large => font-heading-xl
+@mixin font-heading-xl() {
+  font-size: $fontSize-heading-xl;
+  line-height: $lineHeight-compact;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-display => font-heading-l
+@mixin font-heading-l() {
+  font-size: $fontSize-heading-l;
+  line-height: $lineHeight-compact;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-h1 => font-heading-m
+@mixin font-heading-m() {
+  font-size: $fontSize-heading-m;
+  line-height: $lineHeight-compact;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-h2 => font-heading-s
+@mixin font-heading-s() {
+  font-size: $fontSize-heading-s;
+  line-height: $lineHeight-compact;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-h3 => font-heading-xs
+@mixin font-heading-xs() {
+  font-size: $fontSize-heading-xs;
+  line-height: $lineHeight-compact;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-h4 => font-body-l-bold
+@mixin font-body-l-bold() {
+  font-size: $fontSize-body-l;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-bold;
+}
+@mixin font-body-l-regular() {
+  font-size: $fontSize-body-l;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-regular;
+}
+// RENAME: text-h5 => font-body-m-bold
+@mixin font-body-m-bold() {
+  font-size: $fontSize-body-m;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-h6 => font-body-s-bold
+@mixin font-body-s-bold() {
+  font-size: $fontSize-body-s;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-bold;
+}
+// RENAME: text-title-large => font-body-m-semibold
+@mixin font-body-m-semibold() {
+  font-size: $fontSize-body-m;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-semibold;
+}
+// RENAME: text-title => font-body-s-semibold
+@mixin font-body-s-semibold() {
+  font-size: $fontSize-body-s;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-semibold;
+}
+// RENAME: text-title-small => font-caption-m-semibold
+@mixin font-caption-m-semibold() {
+  font-size: $fontSize-caption-m;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-semibold;
+}
+// RENAME: text-body-large => font-body-m-regular
+@mixin font-body-m-regular() {
+  font-size: $fontSize-body-m;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-regular;
+}
+// RENAME: text-body => font-body-s-regular
+@mixin font-body-s-regular() {
+  font-size: $fontSize-body-s;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-regular;
+}
+// RENAME: text-caption => font-caption-m-regular
+@mixin font-caption-m-regular() {
+  font-size: $fontSize-caption-m;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-regular;
+}
+// RENAME: text-caption-small => font-caption-s-regular
+@mixin font-caption-s-regular() {
+  font-size: $fontSize-caption-s;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-regular;
+}
+// RENAME: text-caption-small-semibold => font-caption-s-semibold
+@mixin font-caption-s-semibold() {
+  font-size: $fontSize-caption-s;
+  line-height: $lineHeight-relaxed;
+  font-weight: $fontWeight-semibold;
+}
+
+// ====== radius ======
+$radius-none: 0px !default; // RENAME: $border-radius-none => $radius-none
+$radius-s: 4px !default; // RENAME: $border-radius-none => $radius-s
+$radius-m: 6px !default; // RENAME: $border-radius-normal => $radius-m
+$radius-l: 8px !default; // RENAME: $border-radius-medium => $radius-l
+$radius-xl: 12px !default; // RENAME: $border-radius-large => $radius-xl
+$radius-pill: 99rem !default;
+$radius-circle: 50% !default; // RENAME: $border-radius-circle => $radius-circle
+
+// ====== opacity ======
+$opacity-pressed: 0.12 !default;
+$opacity-hover: 0.8 !default;
+$opacity-overlay-mobile: 0.38 !default;
+$opacity-overlay-desktop: 0.6 !default;
+$opacity-solid: 1 !default;
+$opacity-transparent: 0 !default;
+// #alpha-low-1: 0.04 !default; // TODO: 废弃, $opacity-pressed
+// #alpha-low-2: 0.06 !default; // TODO: 废弃, $opacity-pressed
+// #alpha-low-3: 0.08 !default; // TODO: 废弃, $opacity-pressed
+// #alpha-low-4: 0.1 !default; // TODO: 废弃, $opacity-pressed
+// #alpha-high-1: 0.3 !default; // TODO: 废弃, $opacity-overlay-mobile
+// #alpha-high-2: 0.45 !default; // TODO: 废弃, $opacity-overlay-mobile
+// #alpha-high-3: 0.6 !default; // TODO: 废弃, $opacity-overlay-desktop
+// #alpha-high-4: 0.8 !default; // TODO: 废弃, $opacity-hover
+
+// ====== shadow ======
+$shadow-none: none !default;
+$shadow-normal-1: 0px 0px 12px 0px rgba(0, 0, 0, 0.03) !default; // RENAME: $shadow-default => $shadow-normal-1
+$shadow-normal-2: 0px 1px 6px 0px rgba(0, 0, 0, 0.1) !default; // RENAME: $shadow-default-on-surface => $shadow-normal-2
+$shadow-normal-3: 0px -1px 8px 0px rgba(0, 0, 0, 0.11) !default; // RENAME: $shadow-navigation => $shadow-normal-3
+$shadow-normal-4: 0px 4px 10px 0px rgba(0, 0, 0, 0.14) !default; // RENAME: $shadow-floating => $shadow-normal-4
+$shadow-normal-5: 0px 4px 20px 0px rgba(0, 0, 0, 0.08) !default;
+$shadow-hover-1: 0px 4px 20px 0px rgba(0, 0, 0, 0.08) !default; // RENAME: $shadow-trigger => $shadow-hover-1
+$shadow-hover-2:
+  0px 4px 8px 0px rgba(0, 0, 0, 0.2),
+  0px 8px 20px 0px rgba(0, 0, 0, 0.1) !default; // RENAME: $shadow-floating-trigger => $shadow-hover-2
+
+// ====== accent ======
+$color-accent-1: $color-purple-500 !default;
+$color-accent-2: $color-cyan-700 !default;
+$color-accent-3: $color-orange-900 !default;
+$color-accent-4: $color-purple-900 !default;
+$color-accent-5: $color-blue-700 !default;
+$color-accent-6: $color-cyan-900 !default;
+$color-accent-7: $color-green-900 !default;
+$color-accent-8: $color-green-600 !default;
+$color-accent-9: $color-yellow-500 !default;
+$color-accent-10: $color-yellow-600 !default;
+$color-accent-11: $color-purple-50 !default;
+$color-accent-12: $color-cyan-50 !default;
+$color-accent-13: $color-blue-50 !default;
+$color-accent-14: $color-green-50 !default;
+$color-accent-15: $color-yellow-50 !default;
+
+// ====== motions ======
+$motion-duration-s: 160ms !default;
+$motion-duration-m: 240ms !default;
+$motion-duration-l: 320ms !default;
+$motion-timing-ease: cubic-bezier(0.22, 0, 0.08, 1) !default;
+
+// ====== responsive ======
+$rwd-breakpoint-s: 744px !default;
+$rwd-breakpoint-m: 1024px !default;
+$rwd-maxwidth: 1160px !default;
+$rwd-safearea-s: 20px !default;
+$rwd-safearea-m: 48px !default;

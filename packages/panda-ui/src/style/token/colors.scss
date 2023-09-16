@@ -1,0 +1,238 @@
+// orange
+$color-orange-50: #fff0e5;
+$color-orange-100: #ffd7bf;
+$color-orange-200: #ffbe99;
+$color-orange-300: #ffa673;
+$color-orange-400: #ff7426;
+$color-orange-500: #ff5b00;
+$color-orange-600: #f74600;
+$color-orange-700: #e53000;
+$color-orange-800: #bf1b00;
+$color-orange-900: #8a0300;
+$color-orange: $color-orange-500;
+
+// green
+$color-green-50: #f0fffa;
+$color-green-100: #dcfaef;
+$color-green-200: #cbf2e5;
+$color-green-300: #8ee1c3;
+$color-green-400: #2fc48d;
+$color-green-500: #00b371;
+$color-green-600: #0da06a;
+$color-green-700: #0a8c5f;
+$color-green-800: #0c7d54;
+$color-green-900: #0a6849;
+$color-green: $color-green-500;
+
+// yellow
+$color-yellow-50: #fff7e5;
+$color-yellow-100: #ffeecc;
+$color-yellow-200: #ffdb99;
+$color-yellow-300: #ffd184;
+$color-yellow-400: #ffae43;
+$color-yellow-500: #ff9c00;
+$color-yellow-600: #f09503;
+$color-yellow-700: #c47900;
+$color-yellow-800: #a66800;
+$color-yellow-900: #885700;
+$color-yellow: $color-yellow-500;
+
+// blue
+$color-blue-50: #edf5ff;
+$color-blue-100: #d5e1ff;
+$color-blue-200: #b2cbff;
+$color-blue-300: #97b6ff;
+$color-blue-400: #6193ff;
+$color-blue-500: #437dff;
+$color-blue-600: #3162f5;
+$color-blue-700: #2c58db;
+$color-blue-800: #274ec2;
+$color-blue-900: #2244a8;
+$color-blue: $color-blue-500;
+
+// red
+$color-red-50: #fff5f5;
+$color-red-100: #ffedeb;
+$color-red-200: #ffcac2;
+$color-red-300: #ffa79a;
+$color-red-400: #fa583f;
+$color-red-500: #eb4221;
+$color-red-600: #db3e1f;
+$color-red-700: #c7381c;
+$color-red-800: #b23319;
+$color-red-900: #9e2d16;
+$color-red: $color-red-500;
+
+// neutral
+// RENAME: gray => neutral
+$color-neutral-50: #fafafa;
+$color-neutral-100: #f5f5f5;
+$color-neutral-200: #eeeeee;
+$color-neutral-300: #e0e0e0;
+$color-neutral-400: #cccccc;
+$color-neutral-500: #b2b2b2;
+$color-neutral-600: #999999;
+$color-neutral-700: #757575;
+$color-neutral-800: #4a4a4a;
+$color-neutral-900: #212121;
+$color-neutral: $color-neutral-500;
+
+// purple
+$color-purple-50: #f6f4ff;
+$color-purple-100: #e3defd;
+$color-purple-200: #c8c2ff;
+$color-purple-300: #a399ff;
+$color-purple-400: #6053db;
+$color-purple-500: #4d40cc;
+$color-purple-600: #443dcc;
+$color-purple-700: #2e2ead;
+$color-purple-800: #282696;
+$color-purple-900: #202078;
+$color-purple: $color-purple-500;
+
+// skyBlue
+$color-skyBlue-50: #e3f7fc;
+$color-skyBlue-100: #b9ebfa;
+$color-skyBlue-200: #78d8f5;
+$color-skyBlue-300: #4dcaf0;
+$color-skyBlue-400: #26bfed;
+$color-skyBlue-500: #00b3ea;
+$color-skyBlue-600: #009fd7;
+$color-skyBlue-700: #0090c2;
+$color-skyBlue-800: #007fac;
+$color-skyBlue-900: #006d94;
+$color-skyBlue: $color-skyBlue-500;
+
+// roseRed
+$color-roseRed-50: #ffebf5;
+$color-roseRed-100: #ffd1e9;
+$color-roseRed-200: #ffa3d2;
+$color-roseRed-300: #fa7dbd;
+$color-roseRed-400: #f760ae;
+$color-roseRed-500: #f5459f;
+$color-roseRed-600: #db378b;
+$color-roseRed-700: #c22b78;
+$color-roseRed-800: #a82066;
+$color-roseRed-900: #8f1754;
+$color-roseRed: $color-roseRed-500;
+
+// cyan
+$color-cyan-50: #e5feff;
+$color-cyan-100: #c2fafa;
+$color-cyan-200: #99f6f5;
+$color-cyan-300: #5cedeb;
+$color-cyan-400: #21e0e0;
+$color-cyan-500: #00cbd1;
+$color-cyan-600: #00b1b8;
+$color-cyan-700: #00a3ac;
+$color-cyan-800: #048291;
+$color-cyan-900: #086071;
+$color-cyan: $color-cyan-500;
+
+$color-black: #000000;
+$color-white: #ffffff;
+
+$colors: (
+  'orange-50': #fff0e5,
+  'orange-100': #ffd7bf,
+  'orange-200': #ffbe99,
+  'orange-300': #ffa673,
+  'orange-400': #ff7426,
+  'orange-500': #ff5b00,
+  'orange-600': #f74600,
+  'orange-700': #e53000,
+  'orange-800': #bf1b00,
+  'orange-900': #8a0300,
+  'green-50': #f0fffa,
+  'green-100': #dcfaef,
+  'green-200': #cbf2e5,
+  'green-300': #8ee1c3,
+  'green-400': #2fc48d,
+  'green-500': #00b371,
+  'green-600': #0da06a,
+  'green-700': #0a8c5f,
+  'green-800': #0c7d54,
+  'green-900': #0a6849,
+  'yellow-50': #fff7e5,
+  'yellow-100': #ffeecc,
+  'yellow-200': #ffdb99,
+  'yellow-300': #ffd184,
+  'yellow-400': #ffae43,
+  'yellow-500': #ff9c00,
+  'yellow-600': #f09503,
+  'yellow-700': #c47900,
+  'yellow-800': #a66800,
+  'yellow-900': #885700,
+  'blue-50': #edf5ff,
+  'blue-100': #d5e1ff,
+  'blue-200': #b2cbff,
+  'blue-300': #97b6ff,
+  'blue-400': #6193ff,
+  'blue-500': #437dff,
+  'blue-600': #3162f5,
+  'blue-700': #2c58db,
+  'blue-800': #274ec2,
+  'blue-900': #2244a8,
+  'skyBlue-50': #e3f7fc,
+  'skyBlue-100': #b9ebfa,
+  'skyBlue-200': #78d8f5,
+  'skyBlue-300': #4dcaf0,
+  'skyBlue-400': #26bfed,
+  'skyBlue-500': #00b3ea,
+  'skyBlue-600': #009fd7,
+  'skyBlue-700': #0090c2,
+  'skyBlue-800': #007fac,
+  'skyBlue-900': #006d94,
+  'red-50': #fff5f5,
+  'red-100': #ffedeb,
+  'red-200': #ffcac2,
+  'red-300': #ffa79a,
+  'red-400': #fa583f,
+  'red-500': #eb4221,
+  'red-600': #db3e1f,
+  'red-700': #c7381c,
+  'red-800': #b23319,
+  'red-900': #9e2d16,
+  'roseRed-50': #ffebf5,
+  'roseRed-100': #ffd1e9,
+  'roseRed-200': #ffa3d2,
+  'roseRed-300': #fa7dbd,
+  'roseRed-400': #f760ae,
+  'roseRed-500': #f5459f,
+  'roseRed-600': #db378b,
+  'roseRed-700': #c22b78,
+  'roseRed-800': #a82066,
+  'roseRed-900': #8f1754,
+  'purple-50': #f6f4ff,
+  'purple-100': #e3defd,
+  'purple-200': #c8c2ff,
+  'purple-300': #a399ff,
+  'purple-400': #6053db,
+  'purple-500': #4d40cc,
+  'purple-600': #443dcc,
+  'purple-700': #2e2ead,
+  'purple-800': #282696,
+  'purple-900': #202078,
+  'neutral-50': #fafafa,
+  'neutral-100': #f5f5f5,
+  'neutral-200': #eeeeee,
+  'neutral-300': #e0e0e0,
+  'neutral-400': #cccccc,
+  'neutral-500': #b2b2b2,
+  'neutral-600': #999999,
+  'neutral-700': #757575,
+  'neutral-800': #4a4a4a,
+  'neutral-900': #212121,
+  'cyan-50': #e5feff,
+  'cyan-100': #c2fafa,
+  'cyan-200': #99f6f5,
+  'cyan-300': #5cedeb,
+  'cyan-400': #21e0e0,
+  'cyan-500': #00cbd1,
+  'cyan-600': #00b1b8,
+  'cyan-700': #00a3ac,
+  'cyan-800': #048291,
+  'cyan-900': #086071,
+  'black': #000000,
+  'white': #ffffff,
+);

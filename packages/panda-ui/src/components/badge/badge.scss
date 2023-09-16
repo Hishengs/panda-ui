@@ -1,0 +1,67 @@
+@use 'sass:math';
+@import '../../style/import.scss';
+
+$badge-size: 16px;
+$badge-size__dot: 10px;
+
+.panda-badge {
+  line-height: 1;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  .panda-badge-content {
+    background-clip: padding-box;
+    background-color: $color-brand-primary;
+    border-radius: math.div($badge-size, 2);
+    color: $color-text-primary-onDark;
+    display: inline-block;
+    font-size: 12px;
+    min-width: $badge-size;
+    height: $badge-size;
+    line-height: $badge-size - 2;
+    padding: 0 4px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid rgba($color-common-white, 0.8);
+  }
+}
+
+.panda-badge-fixed .panda-badge-content {
+  position: absolute;
+  top: 0;
+  right: #{1 + (math.div($badge-size, 2))};
+  transform: translateY(-50%) translateX(100%);
+}
+
+.panda-badge-fixed.panda-badge-dot .panda-badge-content {
+  right: math.div($badge-size__dot, 2);
+}
+
+.panda-badge-dot .panda-badge-content {
+  height: $badge-size__dot;
+  min-width: auto;
+  width: $badge-size__dot;
+  padding: 0;
+  right: 0;
+  border-radius: $radius-circle;
+}
+
+.panda-badge-rtl {
+  direction: rtl;
+}
+
+.panda-badge-rtl.panda-badge-fixed .panda-badge-content {
+  left: #{1 + (math.div($badge-size, 2))};
+  right: unset;
+  transform: translateY(-50%) translateX(-100%);
+}
+
+.panda-badge-rtl.panda-badge-fixed.panda-badge-dot .panda-badge-content {
+  left: math.div($badge-size__dot, 2);
+  right: unset;
+}
+
+.panda-badge-rtl.panda-badge-dot .panda-badge-content {
+  right: unset;
+  left: 0;
+}

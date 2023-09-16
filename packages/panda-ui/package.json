@@ -1,0 +1,47 @@
+{
+  "name": "panda-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/panda-ui.js",
+  "module": "dist/panda-ui.mjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache"
+  },
+  "keywords": [],
+  "author": "hishengs@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "feather-icons": "^4.29.1",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@types/lodash": "^4.14.198",
+    "@typescript-eslint/parser": "^6.6.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "@vitest/browser": "^0.34.4",
+    "async-validator": "^4.2.5",
+    "deepmerge": "^4.3.1",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "jsdom": "^22.1.0",
+    "keycode": "^2.2.1",
+    "lodash": "^4.17.21",
+    "marked": "^9.0.0",
+    "normalize-wheel": "^1.0.1",
+    "prettier": "^3.0.3",
+    "resize-observer-polyfill": "^1.5.1",
+    "sass": "^1.66.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vitest": "^0.34.4",
+    "vue-eslint-parser": "^9.3.1",
+    "vue-tsc": "^1.8.5",
+    "webdriverio": "^8.16.5"
+  }
+}

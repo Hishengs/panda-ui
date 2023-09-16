@@ -1,0 +1,272 @@
+@import '../../style/import.scss';
+
+// =============== Input ================
+$input-font-size: 14px;
+$input-font-size__small: 14px;
+$input-font-size__large: 16px;
+$input-selection-color: $color-orange-50;
+$input-caret-color: $color-brand-primary;
+
+.panda-input {
+  display: inline-block;
+  width: 100%;
+  &-inner {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    width: 100%;
+    color: $color-text-primary;
+    border-radius: $radius-m;
+    border: 1px solid $color-border-normal;
+    background-color: $color-bg-widget-normal;
+    position: relative;
+    font-size: $input-font-size;
+    .panda-input-prepend,
+    .panda-input-append {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      color: $color-text-primary;
+      > .panda-icon {
+        font-size: 20px;
+        color: $color-icon-normal;
+      }
+    }
+    .panda-input-prepend-icon {
+      margin-left: 12px;
+    }
+    .panda-input-append-icon {
+      margin-right: 12px;
+    }
+    .panda-input-clearable-btn,
+    .panda-input-password-btn {
+      margin-right: 12px;
+      flex-shrink: 0;
+      color: $color-icon-disabled;
+      &:hover {
+        color: $color-icon-normal;
+      }
+    }
+    .panda-input-clearable-btn {
+      font-size: 16px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .panda-input-password-btn {
+      font-size: 20px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .panda-input-words-count {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 12px;
+      text-align: right;
+      font-size: 12px;
+      color: $color-text-placeholder;
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      cursor: text;
+      .panda-input-inner {
+        border-color: $color-brand-primary;
+      }
+    }
+  }
+  &-is-focus {
+    cursor: text;
+    .panda-input-inner {
+      border-color: $color-brand-primary;
+    }
+  }
+  input,
+  textarea {
+    color: currentColor;
+    border: none;
+    outline: none;
+    background: $color-transparent;
+    width: 100%;
+    caret-color: $input-caret-color;
+    padding: 0 12px;
+    line-height: 1.44;
+    &::selection {
+      background-color: $input-selection-color;
+    }
+    &::placeholder {
+      color: $color-text-placeholder;
+      opacity: 1;
+    }
+  }
+  textarea {
+    resize: none;
+    height: 100%;
+  }
+  &-label {
+    margin: 0;
+    margin-bottom: 8px;
+    color: $color-text-primary;
+  }
+}
+
+// textarea
+.panda-input.panda-input-is-textarea {
+  .panda-input-inner {
+    padding: 12px 0;
+    textarea {
+      padding: 0 12px;
+      @include font-body-s-regular();
+      font-size: inherit;
+    }
+  }
+}
+
+// error
+.panda-input.panda-input-with-error {
+  .panda-input-inner {
+    border-color: $color-error !important;
+  }
+  .panda-input-error-message {
+    font-size: 12px;
+    color: $color-error;
+    margin: 8px 0 0 0;
+  }
+}
+
+// disabled
+.panda-input.panda-input-disabled {
+  .panda-input-inner:hover {
+    cursor: not-allowed;
+  }
+  input,
+  textarea {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+.panda-input.panda-input-disabled:not(.panda-input-lined):not(
+    .panda-input-filled
+  ) {
+  .panda-input-inner {
+    color: $color-text-disabled;
+    border-color: $color-border-normal;
+    background-color: $color-bg-widget-darker-1;
+  }
+}
+
+// types
+.panda-input-outlined {
+  &.panda-input-is-focus {
+    .panda-input-inner {
+      border-color: $color-brand-primary;
+    }
+  }
+}
+
+.panda-input-lined:not(.panda-input-is-textarea) {
+  .panda-input-inner {
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom-color: $color-border-normal;
+    &:hover {
+      border-bottom-color: $color-border-active;
+    }
+    input {
+      padding: 0;
+    }
+    .panda-input-prepend {
+      margin-right: 12px;
+    }
+    .panda-input-prepend-icon {
+      margin-left: 0;
+    }
+    .panda-input-append-icon {
+      margin-right: 0;
+    }
+  }
+  &.panda-input-is-focus .panda-input-inner {
+    border-bottom-color: $color-border-active;
+  }
+  &.panda-input-disabled {
+    .panda-input-inner {
+      color: $color-text-disabled;
+      border-color: $color-border-normal;
+      background-color: $color-bg-widget-normal;
+    }
+  }
+}
+
+.panda-input-filled {
+  .panda-input-inner {
+    border-color: $color-transparent;
+    background-color: $color-bg-widget-darker-2;
+    color: $color-text-primary;
+    &:hover {
+      background-color: $color-bg-widget-darker-3;
+      border-color: $color-transparent;
+    }
+  }
+  &.panda-input-is-focus {
+    .panda-input-inner {
+      border-color: $color-brand-primary;
+      background-color: $color-transparent;
+    }
+  }
+  &.panda-input-disabled {
+    .panda-input-inner {
+      color: $color-text-disabled;
+      background-color: $color-bg-widget-darker-2 !important;
+    }
+  }
+}
+
+// size
+.panda-input-small {
+  .panda-input-inner {
+    font-size: $input-font-size__small;
+    min-height: 36px;
+    .panda-input-prepend-icon,
+    .panda-input-append-icon {
+      font-size: 16px;
+    }
+  }
+  input {
+    line-height: 1.33;
+  }
+}
+
+.panda-input-large {
+  .panda-input-inner {
+    font-size: $input-font-size__large;
+    min-height: 48px;
+  }
+}
+
+.panda-input-rtl {
+  direction: rtl;
+  .panda-input-clearable-btn,
+  .panda-input-password-btn {
+    margin-right: unset;
+    margin-left: 12px;
+  }
+  .panda-input-prepend-icon {
+    margin-left: unset;
+    margin-right: 12px;
+  }
+  .panda-input-append-icon {
+    margin-right: unset;
+    margin-left: 12px;
+  }
+  .panda-input-words-count {
+    text-align: left;
+  }
+}

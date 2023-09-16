@@ -1,0 +1,202 @@
+@import '../../style/import.scss';
+
+$poptip-prefix: 'panda-poptip';
+$poptip-bg-on-dark: transparentize($color-common-black, 1 - $opacity-hover);
+$poptip-arrow-size: 7px;
+$poptip-arrow-border-color: $color-border-dim;
+$poptip-arrow-boundary-offset: 12px;
+$poptip-shadow: $shadow-hover-1;
+
+.#{$poptip-prefix} {
+  display: inline-block;
+  &-popper {
+    color: $color-text-primary;
+    background-color: $color-bg-widget-normal;
+    border-radius: $radius-m;
+    box-shadow: $poptip-shadow;
+    z-index: 9999;
+    &::after {
+      color: $color-common-white;
+    }
+    &-inner {
+      margin: 24px 0;
+      padding: 0 24px;
+      overflow-y: auto;
+      /*定义滚动条高宽及背景
+      高宽分别对应横竖滚动条的尺寸*/
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 0;
+      }
+      /*定义滚动条轨道
+      内阴影+圆角*/
+      &::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: transparent;
+      }
+      /*定义滑块
+      内阴影+圆角*/
+      &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        border: 2px solid transparent;
+        box-shadow: 4px 0 0 $color-neutral-600 inset;
+        visibility: hidden;
+      }
+      &:hover {
+        &::-webkit-scrollbar-thumb {
+          visibility: initial;
+        }
+      }
+    }
+    &-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      box-sizing: content-box;
+      height: 16px;
+      width: 16px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    &-title,
+    &-content {
+      width: 100%;
+    }
+    &-title {
+      color: currentColor;
+      margin-bottom: 6px;
+      @include font-body-s-semibold();
+    }
+    &-content {
+      @include font-body-s-regular();
+    }
+  }
+  .panda-fade-transition-enter-active,
+  .panda-fade-transition-leave-active {
+    transition: opacity $motion-duration-m $motion-timing-ease;
+  }
+}
+
+// closable
+.#{$poptip-prefix}-closable {
+  > .#{$poptip-prefix}-popper > .#{$poptip-prefix}-popper-inner {
+    padding-right: 40px;
+  }
+}
+.#{$poptip-prefix}-rtl.#{$poptip-prefix}-closable {
+  > .#{$poptip-prefix}-popper > .#{$poptip-prefix}-popper-inner {
+    padding-right: 24px;
+    padding-left: 40px;
+  }
+  .#{$poptip-prefix}-popper-close-btn {
+    right: unset;
+    left: 12px;
+  }
+}
+
+// dark
+.#{$poptip-prefix}-dark .#{$poptip-prefix}-popper,
+.#{$poptip-prefix}-popper.dark {
+  color: $color-text-primary-onDark;
+  background-color: $poptip-bg-on-dark;
+  &::after {
+    color: $poptip-bg-on-dark;
+  }
+  &-inner {
+    /*定义滑块
+    内阴影+圆角*/
+    &::-webkit-scrollbar-thumb {
+      box-shadow: 4px 0 0 $color-neutral-800 inset;
+    }
+  }
+}
+
+.#{$poptip-prefix}-no-arrow {
+  > .#{$poptip-prefix}-popper::after {
+    display: none;
+  }
+}
+
+// ============= placement ===============
+
+// bottom, left, right, top
+@mixin getArrowDefine($dir, $pos, $pos1, $pos2, $pos3) {
+  $dirTemp: #{$pos};
+  @if $dir == $dirTemp {
+    &::after {
+      position: absolute;
+      content: '';
+      border-#{$pos1}: $poptip-arrow-size solid transparent;
+      border-#{$pos2}: $poptip-arrow-size solid transparent;
+    }
+    &::after {
+      #{$pos}: -$poptip-arrow-size;
+      border-#{$pos3}: $poptip-arrow-size solid currentColor;
+    }
+    &::after {
+      #{$pos1}: 50%;
+      margin-#{$pos1}: -$poptip-arrow-size;
+    }
+  }
+  $dirTemp: #{$pos}-start;
+  @if $dir == $dirTemp {
+    &::after {
+      margin-#{$pos1}: unset;
+      #{$pos1}: $poptip-arrow-boundary-offset;
+    }
+  }
+  $dirTemp: #{$pos}-end;
+  @if $dir == $dirTemp {
+    &::after {
+      margin-#{$pos1}: unset;
+      #{$pos1}: unset;
+      #{$pos2}: $poptip-arrow-boundary-offset;
+    }
+  }
+}
+
+@mixin buildArrow($dir) {
+  @if $dir == top or $dir == top-start or $dir == top-end {
+    @include getArrowDefine($dir, top, left, right, bottom);
+    &::after {
+      filter: drop-shadow(1px -2px 1px rgba(0, 0, 0, 0.04));
+    }
+  } @else if $dir == bottom or $dir == bottom-start or $dir == bottom-end {
+    @include getArrowDefine($dir, bottom, left, right, top);
+    &::after {
+      filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.04));
+    }
+  } @else if $dir == left or $dir == left-start or $dir == left-end {
+    @include getArrowDefine($dir, left, top, bottom, right);
+    &::after {
+      filter: drop-shadow(-2px 1px 1px rgba(0, 0, 0, 0.04));
+    }
+  } @else if $dir == right or $dir == right-start or $dir == right-end {
+    @include getArrowDefine($dir, right, top, bottom, left);
+    &::after {
+      filter: drop-shadow(2px 1px 1px rgba(0, 0, 0, 0.04));
+    }
+  }
+}
+
+$dirs: left, right, top, bottom;
+$dirs-placements: (
+  left: right,
+  right: left,
+  top: bottom,
+  bottom: top,
+);
+
+@each $dir in $dirs {
+  .#{$poptip-prefix}-popper[data-popper-placement^='#{$dir}'] {
+    @include buildArrow(map-get($dirs-placements, $dir));
+  }
+  $dirTemp: #{$dir}-start;
+  .#{$poptip-prefix}-popper[data-popper-placement='#{$dirTemp}'] {
+    @include buildArrow(#{map-get($dirs-placements, $dir)}-start);
+  }
+  $dirTemp: #{$dir}-end;
+  .#{$poptip-prefix}-popper[data-popper-placement='#{$dirTemp}'] {
+    @include buildArrow(#{map-get($dirs-placements, $dir)}-end);
+  }
+}

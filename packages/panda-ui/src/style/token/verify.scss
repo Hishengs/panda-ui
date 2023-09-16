@@ -1,0 +1,81 @@
+// 此文件覆盖原有 token 值，用于设计师测试验证
+$color-brand-primary: #ff50ae;
+$color-brand-primary-background: #ff50ae;
+$color-brand-secondary: #ff50ae;
+
+$color-icon-normal: #3e008c;
+$color-icon-disabled: #3e008c;
+
+$color-text-primary: #7000ff;
+$color-text-secondary: #7000ff;
+$color-text-placeholder: #7000ff;
+$color-text-disabled: #7000ff;
+$color-text-primary-onDark: #7000ff;
+$color-text-secondary-onDark: #7000ff;
+$color-text-placeholder-onDark: #7000ff;
+$color-text-disabled-onDark: #7000ff;
+$color-text-link: #7000ff;
+
+$color-bg-widget-normal: #e3f7ff;
+$color-bg-widget-darker-1: #e3f7ff;
+$color-bg-widget-darker-2: #e3f7ff;
+$color-bg-widget-darker-3: #e3f7ff;
+$color-bg-page: #e3f7ff;
+
+$color-bg-overlay-white: #e3f7ff;
+$color-bg-overlay-black-mobile: #e3f7ff;
+$color-bg-overlay-black-desktop: #e3f7ff;
+
+$color-border-active: #ff028b;
+$color-border-normal: #ff028b;
+$color-border-dim: #ff028b;
+$color-border-active-onDark: #ff028b;
+$color-border-normal-onDark: #ff028b;
+$color-border-dim-onDark: #ff028b;
+
+$color-divider-solid-normal: #90b2c0;
+$color-divider-solid-darker: #90b2c0;
+$color-divider-dashed-normal: #90b2c0;
+$color-divider-dashed-darker: #90b2c0;
+
+// feedback
+$color-error: #7000ff;
+$color-error-background: #7000ff;
+$color-caution: #7000ff;
+$color-caution-background: #7000ff;
+$color-success: #7000ff;
+$color-success-background: #7000ff;
+$color-info: #7000ff;
+$color-info-background: #7000ff;
+
+$color-common-black: #111111;
+$color-common-white: #fff6a9;
+
+// 圆角
+$radius-none: 1px;
+$radius-s: 1px;
+$radius-m: 1px;
+$radius-l: 1px;
+$radius-xl: 1px;
+$radius-pill: 1px;
+$radius-circle: 1px;
+
+// 阴影
+$shadow-none: none;
+$shadow-normal-1: 0px 0px 12px 0px #23dbe7;
+$shadow-normal-2: 0px 1px 6px 0px #23dbe7;
+$shadow-normal-3: 0px -1px 8px 0px #23dbe7;
+$shadow-normal-4: 0px 4px 10px 0px #23dbe7;
+$shadow-normal-5: 0px 4px 20px 0px #23dbe7;
+$shadow-hover-1: 0px 4px 20px 0px #23dbe7;
+$shadow-hover-2:
+  0px 4px 8px 0px #23dbe7,
+  #23dbe7;
+
+// 透明度
+$opacity-pressed: 0.1;
+$opacity-hover: 0.1;
+$opacity-overlay-mobile: 0.1;
+$opacity-overlay-desktop: 0.1;
+$opacity-solid: 0.1;
+$opacity-transparent: 0.1;

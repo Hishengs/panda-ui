@@ -1,0 +1,404 @@
+@import '../../style/import.scss';
+
+// =============== Button ================
+$btn-primary-color: $color-text-primary-onDark;
+$btn-primary-bg: $color-brand-primary;
+$btn-primary-border: $color-brand-primary;
+$btn-primary-bg__disabled: $color-bg-widget-darker-3;
+$btn-primary-border__disabled: $color-bg-widget-darker-3;
+
+$btn-secondary-color: $color-brand-primary;
+$btn-secondary-bg: $color-bg-widget-normal;
+$btn-secondary-border: $color-brand-primary;
+$btn-secondary-color__disabled: $color-text-disabled;
+$btn-secondary-bg__disabled: $btn-secondary-bg;
+$btn-secondary-border__disabled: $color-text-disabled;
+
+$btn-text-color: $color-brand-primary;
+$btn-text-bg: transparent;
+$btn-text-border: transparent;
+$btn-text-color__disabled: $color-text-disabled;
+$btn-text-bg__disabled: transparent;
+$btn-text-border__disabled: transparent;
+
+$btn-outlined-color: $color-text-primary;
+$btn-outlined-bg: transparent;
+$btn-outlined-border: $color-border-active;
+$btn-outlined-color__disabled: $color-text-disabled;
+$btn-outlined-bg__disabled: transparent;
+$btn-outlined-border__disabled: $color-text-disabled;
+
+$btn-white-outlined-color: $color-text-primary-onDark;
+$btn-white-outlined-bg: transparent;
+$btn-white-outlined-border: $color-border-active-onDark;
+$btn-white-outlined-color__disabled: $color-text-disabled;
+$btn-white-outlined-bg__disabled: transparent;
+$btn-white-outlined-border__disabled: $color-text-disabled;
+
+$btn-font-size: 16px;
+$btn-font-size__mini: 12px;
+$btn-font-size__small: 14px;
+$btn-font-size__large: 16px;
+
+$btn-padding: 8px 18px;
+$btn-padding__mini: 4px 10px;
+$btn-padding__small: 6px 15px;
+$btn-padding__large: 10px 22px;
+
+$btn-line-height: 22px;
+$btn-line-height__mini: 16px;
+$btn-line-height__small: 20px;
+$btn-line-height__large: 22px;
+/* $btn-line-height: 1;
+$btn-line-height__mini: 1;
+$btn-line-height__small: 1;
+$btn-line-height__large: 1; */
+
+$btn-height: 44px;
+$btn-height__mini: 28px;
+$btn-height__small: 36px;
+$btn-height__large: 48px;
+
+$btn-min-width: 86px;
+$btn-min-width__mini: 72px;
+$btn-min-width__small: 72px;
+$btn-min-width__large: 86px;
+
+.panda-button {
+  min-width: $btn-min-width;
+  display: inline-block;
+  font-size: $btn-font-size;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $fontWeight-semibold;
+  border-radius: $radius-m;
+  padding: $btn-padding;
+  margin: 0;
+  text-align: center;
+  line-height: $btn-line-height;
+  outline: none;
+  user-select: none;
+  appearance: none;
+  text-transform: none;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  // icon
+  .panda-icon {
+    margin-top: -0.125em;
+    vertical-align: middle;
+  }
+
+  > .panda-icon + span,
+  > .panda-button-loading-icon + span {
+    margin-left: 8px;
+  }
+}
+
+// disabled
+.panda-button-disabled {
+  cursor: not-allowed;
+}
+
+// primary
+.panda-button-primary {
+  color: $btn-primary-color;
+  background-color: $btn-primary-bg;
+  border: 1px solid $btn-primary-border;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: mix(
+        $btn-primary-bg,
+        $color-common-black,
+        100% - percentage($opacity-pressed)
+      );
+    }
+  }
+
+  &:active {
+    background-color: mix(
+      $btn-primary-bg,
+      $color-common-black,
+      100% - percentage($opacity-pressed)
+    );
+  }
+
+  // disabled
+  &.panda-button-disabled {
+    color: $color-text-placeholder;
+    background-color: $btn-primary-bg__disabled;
+    border-color: $btn-primary-border__disabled;
+    &:hover,
+    &:focus,
+    &:visited {
+      background-color: $btn-primary-bg__disabled;
+    }
+  }
+
+  // loading
+  &.panda-button-loading {
+    $weight: 100% - percentage($opacity-overlay-mobile);
+    border: 1px solid mix($btn-primary-bg, $color-common-white, $weight);
+    background-color: mix($btn-primary-bg, $color-common-white, $weight);
+  }
+  .panda-button-loading-icon {
+    color: $color-icon-normal-onDark;
+    circle {
+      stroke: rgba($color-icon-normal-onDark, 0.3);
+    }
+  }
+}
+
+// secondary
+.panda-button-secondary {
+  color: $btn-secondary-color;
+  background-color: $btn-secondary-bg;
+  border: 1px solid $btn-secondary-border;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: mix(
+        $btn-secondary-bg,
+        $color-brand-primary,
+        100% - percentage($opacity-pressed)
+      );
+    }
+  }
+
+  &:active {
+    background-color: mix(
+      $btn-secondary-bg,
+      $color-brand-primary,
+      100% - percentage($opacity-pressed)
+    );
+  }
+
+  // disabled
+  &.panda-button-disabled {
+    color: $btn-secondary-color__disabled;
+    background-color: $btn-secondary-bg__disabled;
+    border-color: $btn-secondary-border__disabled;
+  }
+
+  .panda-button-loading-icon {
+    color: $color-brand-primary;
+    circle {
+      stroke: $color-border-normal;
+    }
+  }
+}
+
+// text
+.panda-button-text {
+  color: $btn-text-color;
+  background-color: $btn-text-bg;
+  border: 1px solid $btn-text-border;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: mix(
+        transparent,
+        $btn-text-color,
+        100% - percentage($opacity-pressed)
+      );
+    }
+  }
+
+  &:active {
+    background-color: mix(
+      transparent,
+      $btn-text-color,
+      100% - percentage($opacity-pressed)
+    );
+  }
+
+  // disabled
+  &.panda-button-disabled {
+    color: $btn-text-color__disabled;
+    background-color: $btn-text-bg__disabled;
+  }
+
+  .panda-button-loading-icon {
+    color: $color-brand-primary;
+    circle {
+      stroke: $color-border-normal;
+    }
+  }
+}
+
+// outlined
+.panda-button-outlined {
+  color: $btn-outlined-color;
+  background-color: $btn-outlined-bg;
+  border: 1px solid $btn-outlined-border;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: mix(
+        $btn-outlined-bg,
+        $color-common-black,
+        100% - percentage($opacity-pressed)
+      );
+    }
+  }
+
+  &:active {
+    background-color: mix(
+      $btn-outlined-bg,
+      $color-common-black,
+      100% - percentage($opacity-pressed)
+    );
+  }
+
+  // disabled
+  &.panda-button-disabled {
+    color: $btn-outlined-color__disabled;
+    background: $btn-outlined-bg__disabled;
+    border: 1px solid $btn-outlined-border__disabled;
+  }
+
+  .panda-button-loading-icon {
+    color: $color-border-active;
+    circle {
+      stroke: $color-border-normal;
+    }
+  }
+}
+
+// white-outlined
+.panda-button-white-outlined {
+  color: $btn-white-outlined-color;
+  background-color: $btn-white-outlined-bg;
+  border: 1px solid $btn-white-outlined-border;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: mix(
+        $btn-white-outlined-bg,
+        $color-common-white,
+        100% - percentage($opacity-pressed)
+      );
+    }
+  }
+
+  &:active {
+    background-color: mix(
+      $btn-white-outlined-bg,
+      $color-common-white,
+      100% - percentage($opacity-pressed)
+    );
+  }
+
+  // disabled
+  &.panda-button-disabled {
+    color: $btn-white-outlined-color__disabled;
+    background: $btn-white-outlined-bg__disabled;
+    border: 1px solid $btn-white-outlined-border__disabled;
+  }
+
+  .panda-button-loading-icon {
+    color: $color-border-dim;
+    circle {
+      stroke: $color-border-active;
+    }
+  }
+}
+
+// round
+.panda-button-round {
+  border-radius: $radius-pill;
+
+  /* &.panda-button-large {
+    border-radius: $btn-height__large / 2;
+  }
+
+  &.panda-button-small {
+    border-radius: $btn-height__small / 2;
+  }
+
+  &.panda-button-mini {
+    border-radius: $btn-height__mini / 2;
+  } */
+}
+
+// block
+.panda-button-block {
+  display: block;
+  width: 100%;
+}
+
+// size
+.panda-button-mini {
+  min-width: $btn-min-width__mini;
+  line-height: $btn-line-height__mini;
+  font-size: $btn-font-size__mini;
+  padding: $btn-padding__mini;
+}
+
+.panda-button-small {
+  min-width: $btn-min-width__small;
+  line-height: $btn-line-height__small;
+  font-size: $btn-font-size__small;
+  padding: $btn-padding__small;
+}
+
+.panda-button-large {
+  min-width: $btn-min-width__large;
+  line-height: $btn-line-height__large;
+  font-size: $btn-font-size__large;
+  padding: $btn-padding__large;
+}
+
+// icon
+.panda-button-icon {
+  padding-right: 24px;
+  &.panda-button-mini {
+    padding-right: 16px;
+  }
+}
+
+@keyframes panda-button-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+// loading
+.panda-button-loading {
+  // opacity: .6;
+  cursor: not-allowed;
+  pointer-events: none;
+
+  .panda-button-loading-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    overflow: hidden;
+    animation: panda-button-spin 1.5s linear infinite;
+    & + .panda-icon {
+      margin-left: 8px;
+    }
+  }
+}
+
+.panda-button-rtl {
+  direction: rtl;
+  .panda-button-loading-icon {
+    & + .panda-icon {
+      margin-left: 0;
+      margin-right: 8px;
+    }
+  }
+  > .panda-icon + span,
+  > .panda-button-loading-icon + span {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+}

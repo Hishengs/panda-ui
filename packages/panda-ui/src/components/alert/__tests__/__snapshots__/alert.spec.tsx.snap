@@ -1,0 +1,88 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alert Component > Custom Props > should not render icon when showIcon is false 1`] = `
+"<!-- <panda-fade-transition> -->
+<div class=\\"panda-alert\\">
+  <!--v-if-->
+  <div class=\\"panda-alert-main\\">
+    <!--v-if-->
+    <div class=\\"panda-alert-content\\"></div>
+  </div>
+  <!--v-if-->
+</div>
+<!-- </panda-fade-transition> -->"
+`;
+
+exports[`Alert Component > Custom Props > should render close-Icon when closable is true 1`] = `
+"<!-- <panda-fade-transition> -->
+<div class=\\"panda-alert panda-alert-closable\\">
+  <!--v-if-->
+  <div class=\\"panda-alert-main\\">
+    <!--v-if-->
+    <div class=\\"panda-alert-content\\"></div>
+  </div><svg width=\\"16\\" height=\\"16\\" viewBox=\\"0 0 16 16\\" fill=\\"currentColor\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"panda-alert-close-btn\\">
+    <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M13.7803 2.21967C13.4874 1.92678 13.0126 1.92678 12.7197 2.21967L8 6.93934L3.28033 2.21967L3.19621 2.14705C2.9026 1.9292 2.48594 1.9534 2.21967 2.21967C1.92678 2.51256 1.92678 2.98744 2.21967 3.28033L6.93934 8L2.21967 12.7197L2.14705 12.8038C1.9292 13.0974 1.9534 13.5141 2.21967 13.7803C2.51256 14.0732 2.98744 14.0732 3.28033 13.7803L8 9.06066L12.7197 13.7803L12.8038 13.8529C13.0974 14.0708 13.5141 14.0466 13.7803 13.7803C14.0732 13.4874 14.0732 13.0126 13.7803 12.7197L9.06066 8L13.7803 3.28033L13.8529 3.19621C14.0708 2.9026 14.0466 2.48594 13.7803 2.21967Z\\" fill=\\"currentColor\\"></path>
+  </svg>
+</div>
+<!-- </panda-fade-transition> -->"
+`;
+
+exports[`Alert Component > Custom Props > should render icon when showIcon is true 1`] = `
+"<!-- <panda-fade-transition> -->
+<div class=\\"panda-alert panda-alert-success\\">
+  <div class=\\"panda-alert-icon\\">
+    <!--v-if-->
+  </div>
+  <div class=\\"panda-alert-main\\">
+    <!--v-if-->
+    <div class=\\"panda-alert-content\\"></div>
+  </div>
+  <!--v-if-->
+</div>
+<!-- </panda-fade-transition> -->"
+`;
+
+exports[`Alert Component > Custom Props > should render title <h6>foo</h6> when title is foo 1`] = `
+"<!-- <panda-fade-transition> -->
+<div class=\\"panda-alert\\">
+  <!--v-if-->
+  <div class=\\"panda-alert-main\\">
+    <div class=\\"panda-alert-title\\">
+      <h6>foo</h6>
+    </div>
+    <div class=\\"panda-alert-content\\"></div>
+  </div>
+  <!--v-if-->
+</div>
+<!-- </panda-fade-transition> -->"
+`;
+
+exports[`Alert Component > Slot > should render <p>foo</p> when default slot is <p>foo</p> 1`] = `
+"<!-- <panda-fade-transition> -->
+<div class=\\"panda-alert\\">
+  <!--v-if-->
+  <div class=\\"panda-alert-main\\">
+    <!--v-if-->
+    <div class=\\"panda-alert-content\\">
+      <p>foo</p>
+    </div>
+  </div>
+  <!--v-if-->
+</div>
+<!-- </panda-fade-transition> -->"
+`;
+
+exports[`Alert Component > Slot > should render title <h2>foo</h2> when title-slot is <h2>foo</h2> 1`] = `
+"<!-- <panda-fade-transition> -->
+<div class=\\"panda-alert\\">
+  <!--v-if-->
+  <div class=\\"panda-alert-main\\">
+    <div class=\\"panda-alert-title\\">
+      <h2>foo</h2>
+    </div>
+    <div class=\\"panda-alert-content\\"></div>
+  </div>
+  <!--v-if-->
+</div>
+<!-- </panda-fade-transition> -->"
+`;

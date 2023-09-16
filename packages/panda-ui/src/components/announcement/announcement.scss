@@ -1,0 +1,46 @@
+@import '../../style/import.scss';
+
+$announcement-color: $color-caution;
+$announcement-bg: $color-caution-background;
+
+.panda-announcement {
+  color: $announcement-color;
+  background-color: $announcement-bg;
+  padding: 12px 16px;
+  @include font-body-s-regular();
+  &:hover {
+    cursor: pointer;
+  }
+  &-main {
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 8px;
+      flex-shrink: 0;
+      color: $announcement-color;
+    }
+    .panda-announcement-warning-icon {
+      font-size: 20px;
+      margin-right: 8px;
+    }
+    .panda-announcement-link-icon {
+      font-size: 16px;
+      margin-left: 8px;
+    }
+    .panda-announcement-items {
+      flex: 1;
+      align-self: flex-start;
+      transition: transform $motion-duration-l $motion-timing-ease;
+    }
+    .panda-announcement-item {
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: $announcement-bg;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

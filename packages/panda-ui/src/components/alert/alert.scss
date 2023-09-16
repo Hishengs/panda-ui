@@ -1,0 +1,101 @@
+@import '../../style/import.scss';
+
+.panda-alert {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: $radius-m;
+  &-icon {
+    color: currentColor;
+    margin-right: 8px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+  &-main {
+    flex-grow: 1;
+    color: $color-text-primary;
+    @include font-body-s-regular();
+    .panda-alert-title {
+      > h6 {
+        margin: 0;
+        @include font-body-s-bold();
+        color: $color-text-primary;
+      }
+      margin: 0;
+      margin-bottom: 4px;
+    }
+  }
+  .panda-alert-close-btn {
+    flex-shrink: 0;
+    cursor: pointer;
+    padding: 0;
+    color: $color-icon-normal;
+    margin-top: 3px;
+    margin-left: 16px;
+  }
+  &-align-left {
+    .panda-alert-content {
+      text-align: left;
+    }
+  }
+  &-align-center {
+    .panda-alert-content {
+      text-align: center;
+    }
+  }
+  &-align-right {
+    .panda-alert-content {
+      text-align: right;
+    }
+  }
+  // types
+  &,
+  &-default {
+    background: $color-bg-widget-darker-3;
+    border: 1px solid rgba($color-border-active, 0.3);
+    .panda-alert-icon {
+      color: rgba($color-border-active, 1);
+    }
+  }
+  &-info {
+    background: $color-info-background;
+    border: 1px solid rgba($color-info, 0.3);
+    .panda-alert-icon {
+      color: rgba($color-info, 1);
+    }
+  }
+  &-success {
+    background: $color-success-background;
+    border: 1px solid rgba($color-success, 0.3);
+    .panda-alert-icon {
+      color: rgba($color-success, 1);
+    }
+  }
+  &-warning {
+    background: $color-caution-background;
+    border: 1px solid rgba($color-caution, 0.3);
+    .panda-alert-icon {
+      color: rgba($color-caution, 1);
+    }
+  }
+  &-error {
+    background: $color-error-background;
+    border: 1px solid rgba($color-error, 0.3);
+    .panda-alert-icon {
+      color: rgba($color-error, 1);
+    }
+  }
+}
+
+.panda-alert-rtl {
+  .panda-alert-icon {
+    margin-right: unset;
+    margin-left: 8px;
+  }
+  .panda-alert-close-btn {
+    margin-left: unset;
+    margin-right: 16px;
+  }
+}

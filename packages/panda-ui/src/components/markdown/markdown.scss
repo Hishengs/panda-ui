@@ -1,0 +1,79 @@
+@import '../../style/import.scss';
+
+$markdown-margin: 0;
+
+.panda-markdown {
+  @include font-body-s-regular();
+  color: $color-text-primary;
+  h1 {
+    @include font-heading-m();
+    padding: 24px 0 16px 0;
+  }
+  h2 {
+    @include font-heading-s();
+    padding: 16px 0 12px 0;
+  }
+  h3 {
+    @include font-heading-xs();
+    padding: 20px 0 12px 0;
+  }
+  h4 {
+    @include font-body-l-bold();
+    padding: 12px 0;
+  }
+  h5 {
+    @include font-body-m-bold();
+    padding: 12px 0;
+  }
+  h6 {
+    @include font-body-s-bold();
+    padding: 8px 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: $markdown-margin;
+  }
+  p {
+    margin: 0 $markdown-margin 12px $markdown-margin;
+  }
+  a {
+    @include font-body-s-regular();
+    color: $color-text-link;
+    text-decoration: underline;
+    &:hover {
+      color: $color-blue-600;
+    }
+  }
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    padding-left: 16px;
+    @include font-body-s-regular();
+    > li {
+      margin-bottom: 12px;
+      p {
+        margin-left: 0;
+        margin-top: 0;
+      }
+    }
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  strong {
+    font-weight: $fontWeight-semibold;
+  }
+  img {
+    max-width: 100%;
+    margin-top: 12px;
+    border-radius: $radius-l;
+  }
+}

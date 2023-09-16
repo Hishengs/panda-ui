@@ -1,0 +1,541 @@
+@import '../../style/import.scss';
+
+// =============== Select ================
+$select-color: $color-text-primary;
+$select-bg: $color-bg-widget-normal;
+$select-border: $color-border-normal;
+$select-border-radius: $radius-m;
+$select-placeholder-color: $color-text-placeholder;
+$option-color: $color-text-primary;
+$option-color__disabled: $color-text-disabled;
+$option-color__selected: $color-brand-primary;
+
+$select-tag-color: rgba($color-common-black, 0.87);
+$select-tag-bg: $color-bg-widget-darker-2;
+$select-tag-border-radius: $radius-m;
+
+$select-width: 100%;
+
+.panda-select {
+  display: inline-block;
+  width: $select-width;
+  &-reference {
+    border-radius: $select-border-radius;
+    border: solid 1px $color-border-normal;
+    background-color: $color-bg-widget-normal;
+    display: flex;
+    align-items: center;
+    color: $color-text-primary;
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: $color-transparent;
+      flex: 1;
+      color: inherit;
+      &::placeholder {
+        color: $select-placeholder-color;
+        opacity: 1;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    > .panda-select-multiple {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow-y: auto;
+      .panda-select-selection-item {
+        height: 28px;
+        border-radius: $select-tag-border-radius;
+        background-color: $select-tag-bg;
+        color: $select-tag-color;
+        font-size: 12px;
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        > span {
+          display: inline-block;
+          max-width: 100px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        &:hover {
+          cursor: text;
+        }
+        svg {
+          color: $color-neutral-600;
+          font-size: 14px;
+          cursor: pointer;
+          margin-left: 4px;
+          &:hover {
+            color: $color-neutral-700;
+          }
+        }
+      }
+      .panda-select-selection-item:not(.is-last) {
+        margin-right: 6px;
+      }
+      .panda-select-selection-item.is-plain {
+        padding: 0;
+        background-color: $color-transparent;
+        @include font-body-s-regular();
+        color: $color-text-primary;
+      }
+      .panda-select-selection-item.is-plain:not(.is-last) {
+        margin-right: 24px;
+        position: relative;
+        &::after {
+          position: absolute;
+          right: -14px;
+          display: block;
+          content: '';
+          width: 4px;
+          height: 4px;
+          border-radius: 2px;
+          background-color: $color-text-placeholder;
+        }
+      }
+      > input {
+        margin-left: 6px;
+      }
+      &:hover {
+        &::-webkit-scrollbar-thumb {
+          visibility: hidden;
+        }
+      }
+    }
+    > .panda-select-suffix {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      svg {
+        font-size: 16px;
+        color: $color-icon-disabled;
+        &:hover {
+          color: $color-icon-normal;
+        }
+      }
+      .panda-select-toggle-btn {
+        margin-left: 6px;
+      }
+      .panda-select-clear-btn {
+        margin-left: 6px;
+        color: $color-neutral-400;
+        &:hover {
+          color: $color-neutral-500;
+        }
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    > .panda-select-prefix {
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+      svg {
+        font-size: 20px;
+      }
+    }
+    .view-all,
+    .view-less > span {
+      color: $color-text-link;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .view-all {
+      margin-left: 6px;
+    }
+    .view-less {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      flex: 1;
+      flex-shrink: 0;
+      flex-grow: 1;
+      justify-content: flex-end;
+      margin-bottom: 6px;
+      > span {
+        white-space: nowrap;
+      }
+    }
+  }
+  &-focus {
+    input {
+      caret-color: $color-brand-primary;
+    }
+  }
+  &-expand &-reference {
+    .panda-select-toggle-btn {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.panda-select {
+  .panda-poptip {
+    width: 100%;
+  }
+  .panda-poptip-popper {
+    box-shadow: $shadow-hover-1;
+    border-radius: $radius-l;
+  }
+  .panda-poptip-popper-inner {
+    padding: 0;
+    margin: 8px 0;
+  }
+  .panda-poptip-popper-main {
+    padding: 8px 0;
+  }
+}
+
+.panda-select .panda-select-dropdown {
+  position: relative;
+  .panda-select-dropdown-inner {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .select-empty-text {
+      color: $color-neutral-600;
+      font-size: 14px;
+      line-height: 18px;
+      padding: 12px 20px;
+      margin: 0;
+    }
+  }
+  .panda-select-dropdown-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      $color-common-white
+    );
+  }
+}
+
+.panda-option {
+  color: $option-color;
+  line-height: 1.29;
+  padding: 0 20px;
+  margin: 0 8px;
+  border-radius: $radius-m;
+  display: flex;
+  align-items: center;
+  &-hovering {
+    cursor: pointer;
+    background-color: $color-bg-widget-darker-2;
+  }
+  &-label {
+    flex: 1;
+    padding: 12px 0;
+    svg {
+      font-size: 16px;
+      vertical-align: text-bottom;
+    }
+  }
+  &-checked-icon {
+    font-size: 20px;
+    color: $option-color__selected;
+    flex-shrink: 0;
+  }
+  &-selected {
+    color: $option-color__selected;
+  }
+  &-disabled,
+  .panda-option-disabled.panda-option-hovering {
+    cursor: not-allowed;
+    color: $option-color__disabled;
+    background-color: $color-transparent;
+  }
+}
+
+.panda-option-group {
+  &-label {
+    padding: 20px 20px 12px 20px;
+    color: $color-text-primary;
+    font-size: 12px !important;
+    font-weight: $fontWeight-bold;
+  }
+}
+
+.panda-select-multiple {
+  .panda-option-selected {
+    color: $color-text-primary;
+  }
+}
+
+.panda-select-with-error {
+  .panda-select-reference {
+    &,
+    &:hover {
+      border-color: $color-error !important;
+    }
+  }
+  .error-message {
+    color: $color-error;
+    font-size: 12px;
+    line-height: 1.33;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+}
+
+.panda-select-view-all {
+  .panda-select-multiple {
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .panda-select-selection-item {
+    margin-bottom: 6px;
+  }
+  .panda-select-selection-item:last-child {
+    margin-right: 60px;
+  }
+}
+
+// disabled
+.panda-select.panda-select-disabled {
+  .panda-select-reference {
+    cursor: not-allowed;
+    > input:hover {
+      cursor: not-allowed;
+    }
+    input {
+      color: $color-text-disabled;
+    }
+    .panda-select-suffix .panda-select-toggle-btn {
+      color: $color-icon-disabled;
+    }
+  }
+  .panda-select-toggle-btn {
+    &,
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+.panda-select.panda-select-disabled:not(.panda-select-lined):not(
+    .panda-select-filled
+  ) {
+  .panda-select-reference {
+    background-color: $color-bg-widget-darker-2;
+    color: $color-text-disabled;
+    border-color: $color-border-normal;
+  }
+}
+
+// size
+.panda-select {
+  &,
+  .panda-option {
+    font-size: 14px;
+  }
+  .panda-select-reference {
+    min-height: 44px;
+    padding: 0 12px;
+  }
+}
+
+.panda-select-large {
+  &,
+  .panda-option {
+    font-size: 16px;
+  }
+  .panda-select-reference {
+    min-height: 48px;
+    padding: 0 16px;
+    > input {
+      font-size: 16px;
+    }
+  }
+}
+
+.panda-select-small {
+  .panda-select-reference {
+    min-height: 36px;
+  }
+}
+
+// types
+.panda-select,
+.panda-select-outlined {
+  .panda-select-reference {
+    &:hover {
+      border-color: $color-brand-primary;
+    }
+  }
+  &.panda-select-focus .panda-select-reference {
+    border-color: $color-brand-primary;
+  }
+}
+
+.panda-select-lined {
+  .panda-select-reference {
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-color: $color-border-normal;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 6px;
+    &:hover {
+      border-bottom-color: $color-border-active;
+    }
+  }
+  &.panda-select-focus .panda-select-reference {
+    border-color: $color-neutral-700;
+  }
+  &.panda-select-disabled {
+    .panda-select-reference {
+      color: $color-neutral-700;
+      border-color: $color-border-normal;
+    }
+  }
+}
+
+.panda-select-filled {
+  .panda-select-reference {
+    background-color: $color-bg-widget-darker-2;
+    &:hover {
+      background-color: $color-bg-widget-darker-3;
+    }
+  }
+  &,
+  &.panda-select-focus,
+  &:hover {
+    .panda-select-reference {
+      border-color: $color-transparent;
+    }
+  }
+  &.panda-select-focus.panda-select-filterable .panda-select-reference {
+    border-color: $color-brand-primary;
+    background-color: $color-bg-widget-normal;
+  }
+}
+.panda-select-filled.panda-select-disabled {
+  .panda-select-reference {
+    background-color: $color-bg-widget-darker-2 !important;
+  }
+}
+
+.panda-select .panda-bottom-sheet {
+  .panda-bottom-sheet-inner {
+    padding: 0;
+  }
+  .panda-bottom-sheet-header {
+    height: 52px;
+    margin: 0;
+    padding: 12px 16px;
+    border-bottom: 1px solid $color-border-dim;
+    .header-left,
+    .header-right {
+      position: absolute;
+    }
+    .header-left {
+      left: 16px;
+      display: flex;
+      align-items: center;
+    }
+    .header-right {
+      right: 16px;
+      .panda-button {
+        min-width: 54px;
+      }
+    }
+    .header-title {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+    .header-title > h1 {
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      color: $color-text-primary;
+      @include font-body-m-semibold();
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    svg {
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+  .panda-bottom-sheet-body {
+    padding: 0;
+    min-height: 248px;
+    display: flex;
+    flex-direction: column;
+    .panda-input {
+      width: 100%;
+      padding: 0 16px;
+      margin-top: 16px;
+    }
+    .panda-select-dropdown {
+      flex: 1;
+      max-height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      .panda-select-dropdown-inner {
+        flex: 1;
+        max-height: 100%;
+      }
+    }
+    .panda-option {
+      @include font-body-m-regular();
+      .panda-checkbox {
+        padding-top: 9px;
+        margin-right: 12px;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+
+.placeholder-em .panda-select-reference input::placeholder {
+  color: $color-text-primary;
+}
+
+.panda-select.panda-select-highlight:not(.panda-select-lined):not(
+    .panda-select-filled
+  )
+  .panda-select-reference {
+  border-color: $color-brand-primary;
+}
+
+.panda-select-rtl {
+  direction: rtl;
+  .panda-select-selection-item {
+    margin-left: 6px !important;
+    margin-right: unset !important;
+    svg {
+      margin-left: unset !important;
+      margin-right: 4px !important;
+    }
+  }
+  .panda-select-selection-item.is-last {
+    margin-left: 0 !important;
+    margin-right: unset !important;
+  }
+  .panda-select-reference {
+    > .panda-select-prefix {
+      margin-right: unset;
+      margin-left: 8px;
+    }
+    > .panda-select-suffix {
+      margin-left: unset;
+      margin-right: 8px;
+    }
+  }
+}

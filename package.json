@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "packageManager": "pnpm@8.7.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --write --cache ."
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.2",
+    "@types/node": "^20.5.9",
+    "@vitejs/plugin-vue": "^4.3.4",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "@vue/test-utils": "^2.4.1",
+    "prettier": "^3.0.3",
+    "resize-observer-polyfill": "^1.5.1",
+    "typescript": "^5.2.2",
+    "unplugin-vue-macros": "^2.4.14",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.3"
+  }
+}
